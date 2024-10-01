@@ -3,54 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js" defer></script>
+    <title>Project Overview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
 </head>
 <body>
     <header>
         <nav>
-            <h1>Project Overview</h1>
-            <button class="dropdown">Projects ▼</button>
+            <h1>Your Site Title</h1>
+            <div class="dropdown">Projects</div>
             <ul>
-                <li><a href="https://yashsopro.github.io/projectAd/">Project Ad</a></li>
-                <li><a href="#" id="openimg-link">OpenIMG</a></li>
+                <li><a href="#openimg">OpenIMG</a></li>
+                <li><a href="#projectAd">ProjectAd</a></li>
             </ul>
             <button id="darkModeToggle">Toggle Dark Mode</button>
         </nav>
     </header>
-
     <main class="main-content">
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are a dedicated team passionate about bringing innovative projects to life.</p>
-        </section>
-
-        <section id="projects" class="projects">
-            <h2>Our Projects</h2>
-            <ul>
-                <li class="project"><a href="https://yashsopro.github.io/projectAd/">Project Ad</a></li>
-                <li class="project"><a href="#" id="openimg-link">OpenIMG</a></li>
-            </ul>
-        </section>
-
-        <section id="team" class="team">
-            <h2>Our Team</h2>
-            <ul>
-                <li class="team-member">SableMeow - Founder</li>
-                <li class="team-member">Econome</li>
-                <li class="team-member">Zephyx</li>
-                <li class="team-member">Uranüs PortakalMandalinaSuyuAdam</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Join us on Discord to connect with our team!</p>
-            <a href="https://discord.gg/your-discord-link" target="_blank">Join our Discord</a>
-        </section>
-
-        <section id="comments">
+        <h2>Your Tagline: "We turn your ideas into reality"</h2>
+        <div class="projects" data-aos="fade-in">
+            <h2>Projects</h2>
+            <div class="project" id="openimg">
+                <h3>OpenIMG</h3>
+                <p>A platform for photography sharing and voting.</p>
+            </div>
+            <div class="project" id="projectAd">
+                <h3>ProjectAd</h3>
+                <p>A multimedia experience gateway.</p>
+            </div>
+        </div>
+        <div class="team" data-aos="fade-in">
+            <h2>Team</h2>
+            <div class="team-member">
+                <img src="https://i.imgur.com/your-avatar-url.png" alt="SableMeow">
+                <span>SableMeow</span>
+            </div>
+            <div class="team-member">
+                <img src="https://i.imgur.com/your-avatar-url.png" alt="Econome">
+                <span>Econome</span>
+            </div>
+            <div class="team-member">
+                <img src="https://i.imgur.com/your-avatar-url.png" alt="Zephyx">
+                <span>Zephyx</span>
+            </div>
+            <div class="team-member">
+                <img src="https://i.imgur.com/your-avatar-url.png" alt="Uranüs PortakalMandalinaSuyuAdam">
+                <span>Uranüs PortakalMandalinaSuyuAdam</span>
+            </div>
+        </div>
+        <div id="commentSection">
             <h2>Comments</h2>
             <form id="commentForm">
                 <input type="text" placeholder="Your Name" required>
@@ -58,13 +59,12 @@
                 <button type="submit">Submit</button>
             </form>
             <div id="commentList"></div>
-        </section>
+        </div>
     </main>
-
     <footer>
-        <p>&copy; 2024 Project Overview. All rights reserved.</p>
+        <p>© 2024 Your Company Name. All rights reserved.</p>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
