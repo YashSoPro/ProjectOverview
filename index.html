@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Project Overview</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Your Site Title</h1>
-            <div class="dropdown">Projects</div>
-            <ul>
-                <li><a href="#openimg">OpenIMG</a></li>
-                <li><a href="#projectAd">ProjectAd</a></li>
-            </ul>
-            <button id="darkModeToggle">Toggle Dark Mode</button>
-        </nav>
+        <h1>Project Overview</h1>
     </header>
-    <main class="main-content">
-        <h2>Your Tagline: "We turn your ideas into reality"</h2>
-        <div class="projects" data-aos="fade-in">
-            <h2>Projects</h2>
-            <div class="project" id="openimg">
+    <div class="buttons-container">
+        <div class="dropdown">
+            <button class="dropdown-button">All Projects</button>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="project-link">OpenIMG</a></li>
+                <!-- Add more project links here -->
+            </ul>
+        </div>
+        <button id="discordButton">Discord Server</button>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    <div class="main-content">
+        <h2>Our Projects</h2>
+        <div class="projects">
+            <div class="project">
                 <h3>OpenIMG</h3>
-                <p>A platform for photography sharing and voting.</p>
-                <button class="view-button" onclick="window.location.href='YOUR_GITHUB_REPO_LINK'">View</button>
+                <p>Description of the project goes here.</p>
+                <a href="#" class="view-button">View</a>
             </div>
-            <div class="project" id="projectAd">
-                <h3>ProjectAd</h3>
-                <p>A multimedia experience gateway.</p>
-                <button class="view-button" onclick="window.location.href='YOUR_GITHUB_REPO_LINK'">View</button>
-            </div>
+            <!-- Add more projects as needed -->
         </div>
         <h2>Our Team</h2>
         <div class="team">
@@ -60,7 +58,7 @@
             <button type="submit">Submit</button>
         </form>
         <div id="commentList"></div>
-    </main>
+    </div>
     <footer>
         <p>&nbsp;</p>
     </footer>
