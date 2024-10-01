@@ -1,39 +1,18 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init();
+document.getElementById('commentForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-// Toggle Dark Mode
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
+    const nameInput = document.getElementById('nameInput');
+    const commentInput = document.querySelector('textarea'); // Select the textarea
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-});
+    // Create a new comment
+    const newComment = document.createElement('div');
+    newComment.textContent = `${nameInput.value}: ${commentInput.value}`; // Format as "name: comment"
+    newComment.classList.add('comment'); // Optional: Add a class for styling
 
-// Comment submission handling
-const commentForm = document.getElementById('commentForm');
-const commentList = document.getElementById('commentList');
+    // Add the comment to the comment list
+    document.getElementById('commentList').appendChild(newComment);
 
-commentForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent page reload
-    const nameInput = document.getElementById('nameInput').value;
-    const commentInput = commentForm.querySelector('textarea').value;
-
-    // Create a new comment element
-    const comment = document.createElement('div');
-    comment.classList.add('comment');
-    comment.textContent = `${nameInput}: ${commentInput}`;
-    
-    // Append the new comment to the comment list
-    commentList.appendChild(comment);
-
-    // Clear the form
-    commentForm.reset();
-});
-
-// Dropdown menu functionality
-const dropdownButton = document.querySelector('.dropdown-button');
-const dropdownMenu = document.querySelector('.dropdown-menu');
-
-dropdownButton.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('show');
+    // Clear the inputs
+    nameInput.value = '';
+    commentInput.value = '';
 });
