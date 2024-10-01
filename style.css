@@ -1,81 +1,90 @@
 body {
-    background-color: #f0f8ff; /* Light background color for better visibility */
-    font-family: Arial, sans-serif; /* Set a default font */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .navbar {
-    margin-bottom: 30px; /* Spacing below the navbar */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    position: relative;
 }
 
-header {
-    margin-bottom: 40px; /* Spacing below the header */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1 {
-    color: #333; /* Dark color for the main heading */
+.navbar-title {
+    color: #ffffff;
 }
 
-h2 {
-    color: #007bff; /* Primary color for section headings */
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.card {
-    border-radius: 15px; /* Rounded corners for cards */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s; /* Smooth transform on hover */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+.project-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 10px;
 }
 
-.card-title {
-    color: #333; /* Dark color for card titles */
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-.card-text {
-    color: #666; /* Gray color for card text */
+.team {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.btn {
-    border-radius: 20px; /* Rounded buttons */
+.team-member {
+    margin: 15px 0;
+}
+
+.comments {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+}
+
+#comment {
+    width: 80%;
+    padding: 10px;
+}
+
+#comment-submit {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comment-submit:hover {
+    background-color: #45a049;
 }
 
 footer {
-    margin-top: 20px; /* Spacing above the footer */
-    font-size: 0.9em; /* Smaller font size for footer text */
-}
-
-.text-center {
-    text-align: center; /* Center align text */
-}
-
-.form-group {
-    margin-bottom: 20px; /* Spacing below form groups */
-}
-
-label {
-    color: #333; /* Dark color for labels */
-}
-
-input, textarea {
-    border-radius: 5px; /* Rounded corners for input and textarea */
-    border: 1px solid #ccc; /* Light border color */
-}
-
-input:focus, textarea:focus {
-    border-color: #007bff; /* Change border color on focus */
-    outline: none; /* Remove default outline */
-}
-
-button {
-    background-color: #007bff; /* Primary button color */
-    color: white; /* White text on buttons */
-    transition: background-color 0.3s; /* Smooth background color change */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
