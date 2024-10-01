@@ -2,7 +2,8 @@ body {
     font-family: 'Courier New', Courier, monospace; /* Terminal font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Background color */
+    background: url('your-background-image-url.jpg') no-repeat center center fixed; /* Add your background image URL */
+    background-size: cover; /* Make background cover full area */
 }
 
 .main-content {
@@ -25,6 +26,12 @@ body {
 .tagline {
     font-style: italic; /* Italic for the tagline */
     margin: 10px 0; /* Margin around the tagline */
+    font-size: 1.5rem; /* Adjust the size of the tagline */
+}
+
+.big-quote {
+    font-size: 2.5rem; /* Larger size for quotation marks */
+    line-height: 1; /* Align quotation marks properly */
 }
 
 .description {
@@ -87,6 +94,36 @@ body {
     margin-right: 10px; /* Space between image and name */
 }
 
+form {
+    margin: 20px 0; /* Margin around the form */
+}
+
+input[type="text"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the fields */
+    margin: 10px 0; /* Margin around the fields */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#commentList {
+    margin-top: 20px; /* Space above comment list */
+}
+
 @media (max-width: 768px) {
     .main-content {
         padding: 15px;
@@ -112,11 +149,11 @@ body {
     }
 
     .team-member {
-        flex-direction: column; /* Stack image and text */
-        align-items: center; /* Center items */
+        flex-direction: column; /* Stack team members on mobile */
     }
 
     .team-member img {
-        margin-bottom: 10px; /* Space below the image */
+        width: 60px; /* Smaller size for mobile */
+        height: 60px; /* Smaller size for mobile */
     }
 }
