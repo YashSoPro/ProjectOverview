@@ -38,3 +38,18 @@ document.getElementById("commentForm").addEventListener("submit", function(event
 
 // Load comments on page load
 loadComments();
+
+// Navbar dropdown functionality
+const dropdown = document.querySelector('.dropdown');
+const menu = document.querySelector('nav ul');
+
+dropdown.addEventListener('click', () => {
+    menu.classList.toggle('show'); // Toggle dropdown menu
+});
+
+// Hide dropdown menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target) && !menu.contains(event.target)) {
+        menu.classList.remove('show'); // Hide dropdown
+    }
+});
