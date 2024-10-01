@@ -9,13 +9,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="text-center my-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#comments">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <header class="text-center">
             <h1 class="display-4">My Projects</h1>
             <p class="lead">Explore my awesome projects below!</p>
         </header>
 
-        <div class="row">
+        <div class="row" id="projects">
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
@@ -49,6 +69,51 @@
                 </div>
             </div>
         </div>
+
+        <section id="team" class="my-5">
+            <h2 class="text-center">Meet the Team</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SableMeow</h5>
+                            <p class="card-text">Founder & Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Econome</h5>
+                            <p class="card-text">Developer & Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Zephyx</h5>
+                            <p class="card-text">Backend Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments" class="my-5">
+            <h2 class="text-center">Leave a Comment</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
 
         <footer class="text-center my-4">
             <p>&copy; 2024 Your Name</p>
