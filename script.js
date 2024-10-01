@@ -1,28 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
     const mobileMenu = document.getElementById("mobile-menu");
     const navbarMenu = document.querySelector(".navbar-menu");
-    const submitButton = document.getElementById("submit");
-    const commentInput = document.getElementById("comment");
-    const commentList = document.getElementById("comment-list");
 
-    themeToggle.addEventListener("click", function () {
+    themeToggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
     });
 
-    mobileMenu.addEventListener("click", function () {
-        mobileMenu.classList.toggle("active");
+    mobileMenu.addEventListener("click", () => {
         navbarMenu.classList.toggle("active");
     });
 
-    submitButton.addEventListener("click", function () {
-        const commentText = commentInput.value;
-        if (commentText) {
-            const newComment = document.createElement("p");
-            newComment.textContent = commentText;
-            commentList.appendChild(newComment);
-            commentInput.value = "";
+    document.getElementById("submitComment").addEventListener("click", () => {
+        const commentInput = document.getElementById("commentInput").value;
+        if (commentInput) {
+            alert("Comment submitted: " + commentInput);
+            document.getElementById("commentInput").value = ""; // Clear input
+        } else {
+            alert("Please enter a comment.");
         }
     });
 });
