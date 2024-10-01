@@ -6,9 +6,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #ffffff; /* Text color for better contrast */
+    background-color: rgba(50, 50, 50, 0.85); /* Semi-transparent dark background */
+    color: #f4f4f4; /* Light text color */
     transition: background 0.3s, color 0.3s;
 }
 
@@ -16,7 +15,6 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    backdrop-filter: blur(10px);
 }
 
 .navbar {
@@ -24,9 +22,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.8); /* Darker navbar for readability */
-    color: #fff;
-    border-radius: 5px;
+    background: rgba(30, 30, 30, 0.9); /* Darker navbar with transparency */
+    color: #f4f4f4; /* Light text for navbar */
 }
 
 .header {
@@ -37,22 +34,16 @@ body {
 .projects, .team, .comments {
     margin: 20px 0;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Darker background for sections */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for sections */
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 .project {
     margin: 10px 0;
     padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for projects */
     border-radius: 5px;
-    background: rgba(255, 215, 0, 0.3); /* Slightly transparent gold for projects */
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .team-member {
@@ -64,8 +55,7 @@ body {
 .team-member img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    border: 2px solid #fff; /* White border for team member images */
+    border-radius: 50%; /* Circular images for team members */
 }
 
 textarea {
@@ -74,8 +64,9 @@ textarea {
     margin: 10px 0;
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.8); /* Light background for textarea */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for textarea */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for textarea */
+    color: #333; /* Dark text for readability */
 }
 
 .btn {
@@ -89,7 +80,7 @@ textarea {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #0056b3; /* Darker blue on hover */
 }
 
 footer {
@@ -98,22 +89,19 @@ footer {
 }
 
 .dark-mode {
-    background: rgba(30, 30, 30, 0.9); /* Dark background for dark mode */
-    color: #fff;
+    background-color: rgba(20, 20, 20, 1); /* Dark background for dark mode */
+    color: #f4f4f4; /* Light text for dark mode */
 }
 
 .dark-mode .navbar {
-    background: rgba(0, 0, 0, 0.9); /* Darker navbar in dark mode */
+    background: rgba(10, 10, 10, 1); /* Darker navbar in dark mode */
 }
 
 .dark-mode .projects, 
 .dark-mode .team, 
 .dark-mode .comments {
-    background: rgba(50, 50, 50, 0.9); /* Darker section backgrounds */
-}
-
-.dark-mode .project {
-    background: rgba(255, 215, 0, 0.5); /* Slightly brighter project background */
+    background: rgba(40, 40, 40, 0.9); /* Darker section backgrounds in dark mode */
+    color: #f4f4f4; /* Light text in dark mode */
 }
 
 #commentList {
