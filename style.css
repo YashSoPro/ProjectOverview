@@ -22,43 +22,74 @@ header {
     z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
 }
 
-nav h1 {
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 70px; /* Adjust margin to avoid overlap with the header */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: #ff9800;
+    border: none;
     color: white;
-    font-size: 1.5em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-button:hover {
+    background-color: #e68a00;
+}
+
+.dropdown-menu {
+    display: none; /* Hide the dropdown menu initially */
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-menu.show {
+    display: block; /* Show the dropdown when active */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
 }
 
 button {
     background-color: #ff9800;
     border: none;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 0 10px; /* Space between buttons */
 }
 
 button:hover {
     background-color: #e68a00;
-}
-
-.view-button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.view-button:hover {
-    background-color: #0056b3;
 }
 
 .main-content {
@@ -67,50 +98,24 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 800px; /* Limit the width */
-}
-
-h2 {
-    text-align: center;
+    max-width: 800px;
 }
 
 .projects, .team {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between project and team items */
-}
-
-.project, .team-member {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-.team-member {
-    display: flex;
-    align-items: center; /* Center align items */
+    gap: 15px;
 }
 
 .team-member img {
-    width: 80px; /* Set a fixed size for team member images */
-    height: 80px; /* Set a fixed size for team member images */
-    border-radius: 50%; /* Circular images */
-    margin-right: 10px; /* Space between image and name */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 #commentList {
     margin-top: 20px;
-}
-
-.comment {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px; /* Space between comments */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word; /* Ensure long words break */
-    max-width: 100%; /* Make sure comments don't overflow */
 }
 
 footer {
@@ -125,42 +130,18 @@ textarea, input[type="text"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-top: 10px; /* Space above inputs */
+    margin-top: 10px;
 }
 
 textarea {
-    height: 60px; /* Set a fixed height for the textarea */
+    height: 60px;
+}
+
+.comment {
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 .dark-mode footer {
     background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Ensure full-screen semi-transparent box on mobile */
-@media (max-width: 768px) {
-    .main-content {
-        background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque for mobile */
-        padding: 20px; /* Adjust padding */
-        margin: 10px; /* Adjust margin */
-    }
-    nav ul {
-        display: none; /* Hide regular menu */
-        flex-direction: column; /* Stack menu items */
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
-        top: 60px; /* Position below navbar */
-        width: 100%; /* Full width */
-        z-index: 1000;
-    }
-
-    nav ul.show {
-        display: flex; /* Show dropdown when active */
-    }
-}
-
-/* Dropdown button */
-.dropdown {
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
 }
