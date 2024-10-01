@@ -1,55 +1,49 @@
 // Initialize AOS (Animate On Scroll)
 AOS.init();
 
-// Toggle Dark Mode
-const toggleDarkMode = () => {
-    document.body.classList.toggle("dark-mode");
-};
+// Dark mode toggle functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
 
-// Event listener for dark mode toggle
-document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
-
-// Load comments from local storage
-const loadComments = () => {
-    const comments = JSON.parse(localStorage.getItem("comments")) || [];
-    const commentList = document.getElementById("commentList");
-    commentList.innerHTML = ""; // Clear existing comments
-
-    comments.forEach(comment => {
-        const newComment = document.createElement("div");
-        newComment.classList.add("comment");
-        newComment.textContent = comment;
-        commentList.appendChild(newComment);
-    });
-};
-
-// Comment submission functionality
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    const name = event.target.querySelector("input[type='text']").value; // Get the name
-    const commentText = event.target.querySelector("textarea").value; // Get the comment text
-    const comment = `${name}: ${commentText}`; // Format the comment
-    const comments = JSON.parse(localStorage.getItem("comments")) || [];
-    comments.push(comment); // Add the new comment
-    localStorage.setItem("comments", JSON.stringify(comments)); // Save to local storage
-    loadComments(); // Reload comments
-    event.target.reset(); // Reset the form
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
 });
 
-// Load comments on page load
-loadComments();
+// Comment submission handling
+const commentForm = document.getElementById('commentForm');
+const commentList = document.getElementById('commentList');
 
-// Navbar dropdown functionality
+commentForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent page reload
+    const nameInput = document.getElementById('nameInput').value;
+    const commentInput = commentForm.querySelector('textarea').value;
+
+    // Create a new comment element
+    const comment = document.createElement('div');
+    comment.classList.add('comment');
+    comment.textContent = `${nameInput}: ${commentInput}`;
+    
+    // Append the new comment to the comment list
+    commentList.appendChild(comment);
+
+    // Clear the input fields
+    commentForm.reset();
+});
+
+// Navbar dropdown functionality for mobile
 const dropdown = document.querySelector('.dropdown');
-const menu = document.querySelector('nav ul');
 
 dropdown.addEventListener('click', () => {
-    menu.classList.toggle('show'); // Toggle dropdown menu
+    const menu = document.querySelector('nav ul');
+    menu.classList.toggle('show');
 });
 
-// Hide dropdown menu when clicking outside
+// Close the dropdown when clicking outside
 document.addEventListener('click', (event) => {
-    if (!dropdown.contains(event.target) && !menu.contains(event.target)) {
-        menu.classList.remove('show'); // Hide dropdown
+    if (!dropdown.contains(event.target) && !event.target.matches('nav ul *')) {
+        const menu = document.querySelector('nav ul');
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        }
     }
 });
