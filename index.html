@@ -4,43 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- U-shaped container for tab-like buttons -->
-    <div class="tab-container">
-        <ul class="tab-list">
-            <li><button class="dropdown-button">All Projects</button>
-                <ul class="dropdown-menu">
-                    <li><a href="#" class="project-link">OpenIMG</a></li>
-                    <!-- Add more projects here -->
-                </ul>
-            </li>
-            <li><button id="discordButton">Discord Server</button></li>
-            <li><button id="darkModeToggle">Toggle Dark Mode</button></li>
-        </ul>
-    </div>
-
-    <!-- Tagline Section -->
-    <div class="tagline">
-        <h1>&ldquo;We turn your ideas into reality&rdquo;</h1>
-    </div>
-
     <div class="main-content">
-        <h2>Our Projects</h2>
+        <h2 class="project-overview">Project Overview</h2>
+        
         <div class="projects">
             <div class="project">
                 <h3>OpenIMG</h3>
-                <p>Description of the project goes here.</p>
+                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
                 <a href="#" class="view-button">View</a>
             </div>
             <div class="project">
                 <h3>ProjectAd</h3>
-                <p>Description of ProjectAd goes here.</p>
+                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
                 <a href="#" class="view-button">View</a>
             </div>
-            <!-- Add more projects here -->
+            <div class="project">
+                <h3>EmuinaBox</h3>
+                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
+                <a href="#" class="view-button">View</a>
+            </div>
+            <div class="project">
+                <h3>DisClock</h3>
+                <p>A project showcasing a clock that can display various information in a user-friendly manner.</p>
+                <a href="#" class="view-button">View</a>
+            </div>
         </div>
 
         <h2>Our Team</h2>
@@ -71,12 +62,8 @@
         </form>
         <div id="commentList"></div>
     </div>
-    
     <footer>
         <p>&nbsp;</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
