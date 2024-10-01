@@ -1,25 +1,35 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init();
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleDarkModeBtn = document.getElementById("toggleDarkMode");
+    const commentForm = document.getElementById("commentForm");
+    const commentList = document.getElementById("commentList");
 
-// Toggle Dark Mode
-const toggleDarkMode = () => {
-    document.body.classList.toggle("dark-mode");
-};
+    toggleDarkModeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
 
-// Event listener for dark mode toggle
-document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+    commentForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const commentText = event.target.elements[0].value;
 
-// Comment submission functionality
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    const commentText = event.target.querySelector("textarea").value; // Get the comment text
-    const commentList = document.getElementById("commentList"); // Reference to the comment list
+        const commentDiv = document.createElement("div");
+        commentDiv.textContent = commentText;
+        commentDiv.classList.add("comment");
 
-    // Create a new comment div
-    const newComment = document.createElement("div");
-    newComment.classList.add("comment"); // Add comment class
-    newComment.textContent = commentText; // Set the comment text
-    commentList.appendChild(newComment); // Append the new comment to the list
+        // Append the comment to the list
+        commentList.appendChild(commentDiv);
 
-    event.target.reset(); // Reset the form
+        // Clear the textarea
+        event.target.reset();
+
+        // Feedback message
+        const feedbackMessage = document.createElement("p");
+        feedbackMessage.textContent = "Comment submitted successfully!";
+        feedbackMessage.style.color = "green";
+        commentList.appendChild(feedbackMessage);
+
+        // Remove feedback message after a few seconds
+        setTimeout(() => {
+            feedbackMessage.remove();
+        }, 3000);
+    });
 });
