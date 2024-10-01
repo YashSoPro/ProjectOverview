@@ -18,7 +18,7 @@ const loadComments = () => {
     comments.forEach(comment => {
         const newComment = document.createElement("div");
         newComment.classList.add("comment");
-        newComment.textContent = `${comment.name}: ${comment.text}`; // Format: name: comment
+        newComment.textContent = comment;
         commentList.appendChild(newComment);
     });
 };
@@ -26,6 +26,15 @@ const loadComments = () => {
 // Comment submission functionality
 document.getElementById("commentForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
-    const name = document.getElementById("nameInput").value; // Get the name
-    const commentText = document.getElementById("commentInput").value; // Get the comment text
-    const commentList = document
+    const name = event.target.querySelector("input[type='text']").value; // Get the name
+    const commentText = event.target.querySelector("textarea").value; // Get the comment text
+    const comment = `${name}: ${commentText}`; // Format the comment
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.push(comment); // Add the new comment
+    localStorage.setItem("comments", JSON.stringify(comments)); // Save to local storage
+    loadComments(); // Reload comments
+    event.target.reset(); // Reset the form
+});
+
+// Load comments on page load
+loadComments();
