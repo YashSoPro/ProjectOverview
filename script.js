@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentForm = document.getElementById("commentForm");
     const commentList = document.getElementById("commentList");
 
+    // Load comments from local storage
+    loadComments();
+
     toggleDarkModeBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
     });
@@ -18,18 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
         // Append the comment to the list
         commentList.appendChild(commentDiv);
 
+        // Save comment to local storage
+        saveComment(commentText);
+
         // Clear the textarea
         event.target.reset();
-
-        // Feedback message
-        const feedbackMessage = document.createElement("p");
-        feedbackMessage.textContent = "Comment submitted successfully!";
-        feedbackMessage.style.color = "green";
-        commentList.appendChild(feedbackMessage);
-
-        // Remove feedback message after a few seconds
-        setTimeout(() => {
-            feedbackMessage.remove();
-        }, 3000);
     });
 });
+
+// Function to save comments to local storage
+function saveComment(comment) {
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.push(comment);
+    localStorage.setItem("comments", JSON.stringify(comments));
+}
+
+// Function to load comments from local storage
+function loadComments() {
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.forEach(comment => {
+        const commentDiv = document.createElement("div");
+        commentDiv.textContent = comment;
+        commentDiv.classList.add("comment");
+        document.getElementById("commentList").appendChild(commentDiv);
+    });
+}
