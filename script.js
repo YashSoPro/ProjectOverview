@@ -1,7 +1,7 @@
 // Initialize AOS (Animate On Scroll)
 AOS.init();
 
-// Dark mode toggle functionality
+// Toggle Dark Mode
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
@@ -30,20 +30,17 @@ commentForm.addEventListener('submit', (event) => {
     commentForm.reset();
 });
 
-// Navbar dropdown functionality for mobile
-const dropdown = document.querySelector('.dropdown');
+// Dropdown menu functionality
+const dropdownButton = document.querySelector('.dropdown-button');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
-dropdown.addEventListener('click', () => {
-    const menu = document.querySelector('nav ul');
-    menu.classList.toggle('show');
+dropdownButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('show'); // Toggle visibility of the dropdown menu
 });
 
 // Close the dropdown when clicking outside
 document.addEventListener('click', (event) => {
-    if (!dropdown.contains(event.target) && !event.target.matches('nav ul *')) {
-        const menu = document.querySelector('nav ul');
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-        }
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('show'); // Hide the dropdown menu
     }
 });
