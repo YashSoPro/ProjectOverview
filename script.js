@@ -1,23 +1,28 @@
-$(document).ready(function () {
-    // Initialize AOS
-    AOS.init();
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbarMenu = document.querySelector(".navbar-menu");
+    const submitButton = document.getElementById("submit");
+    const commentInput = document.getElementById("comment");
+    const commentList = document.getElementById("comment-list");
 
-    // Comment submission
-    $('#comment-submit').click(function () {
-        const comment = $('#comment').val();
-        if (comment) {
-            alert(`Comment submitted: ${comment}`);
-            $('#comment').val('');
-        } else {
-            alert('Please enter a comment.');
+    themeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+    });
+
+    mobileMenu.addEventListener("click", function () {
+        mobileMenu.classList.toggle("active");
+        navbarMenu.classList.toggle("active");
+    });
+
+    submitButton.addEventListener("click", function () {
+        const commentText = commentInput.value;
+        if (commentText) {
+            const newComment = document.createElement("p");
+            newComment.textContent = commentText;
+            commentList.appendChild(newComment);
+            commentInput.value = "";
         }
     });
-
-    // Hamburger menu toggle
-    $('.navbar-toggle').click(function () {
-        $('.navbar-container').toggleClass('active');
-    });
-
-    // GSAP animation
-    gsap.from('.hero', { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
 });
