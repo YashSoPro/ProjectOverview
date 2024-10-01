@@ -5,73 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectOverview</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
+    <header>
+        <nav>
             <h1>ProjectOverview</h1>
-            <button id="toggleDarkMode" class="btn"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
         </nav>
+    </header>
+    <div class="main-content">
+        <h2>My Projects</h2>
+        <p>Explore my awesome projects below!</p>
+        <div class="project">
+            <h3>OpenIMG</h3>
+            <p>A platform for sharing photography, where users can vote on images and view a leaderboard of the best submissions.</p>
+        </div>
+        <div class="project">
+            <h3>EmuinaBox</h3>
+            <p>A tool designed to run Windows x86 applications in Termux using Box64 and Wine.</p>
+        </div>
+        <div class="project">
+            <h3>ProjectAd</h3>
+            <p>A gateway to an immersive multimedia experience featuring a vast library and dynamic search capabilities.</p>
+        </div>
+        
+        <h2>Our Team</h2>
+        <div class="team-member">
+            <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
+            <h3>SableMeow</h3>
+            <p>Founder</p>
+        </div>
+        <div class="team-member">
+            <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
+            <h3>Econome</h3>
+            <p>Member</p>
+        </div>
+        <div class="team-member">
+            <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
+            <h3>Zephyx</h3>
+            <p>Member</p>
+        </div>
+        <div class="team-member">
+            <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
+            <h3>Uranüs PortakalMandalinaSuyuAdam</h3>
+            <p>Member</p>
+        </div>
 
-        <header class="header">
-            <h2>My Projects</h2>
-            <p>Explore my awesome projects below!</p>
-        </header>
-
-        <section class="projects" id="projects">
-            <div class="project" id="openimg">
-                <h3>OpenIMG</h3>
-                <p>A platform for sharing photography, where users can vote on images and view a leaderboard of the best submissions.</p>
-            </div>
-            <div class="project" id="emuinabox">
-                <h3>EmuinaBox</h3>
-                <p>A tool designed to run Windows x86 applications in Termux using Box64 and Wine.</p>
-            </div>
-            <div class="project" id="projectad">
-                <h3>ProjectAd</h3>
-                <p>A gateway to an immersive multimedia experience featuring a vast library and dynamic search capabilities.</p>
-            </div>
-        </section>
-
-        <section class="team" id="team">
-            <h2>Our Team</h2>
-            <div class="team-member">
-                <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
-                <h3>SableMeow</h3>
-                <p>Founder</p>
-            </div>
-            <div class="team-member">
-                <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
-                <h3>Econome</h3>
-                <p>Member</p>
-            </div>
-            <div class="team-member">
-                <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
-                <h3>Zephyx</h3>
-                <p>Member</p>
-            </div>
-            <div class="team-member">
-                <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs">
-                <h3>Uranüs PortakalMandalinaSuyuAdam</h3>
-                <p>Member</p>
-            </div>
-        </section>
-
-        <section class="comments" id="comments">
-            <h2>Leave a Comment</h2>
-            <form id="commentForm">
-                <textarea placeholder="Your comment here..." required></textarea>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-            <div id="commentList"></div>
-        </section>
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <textarea placeholder="Your comment here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="commentList"></div>
     </div>
-
     <footer>
         <p>© 2024 ProjectOverview</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
