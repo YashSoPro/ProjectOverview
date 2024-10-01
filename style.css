@@ -15,8 +15,8 @@ body {
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for header */
-    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker semi-transparent background for header */
+    padding: 15px 20px;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -32,65 +32,79 @@ nav h1 {
     color: white;
 }
 
-nav button {
-    color: white;
-    background: none;
+#darkModeToggle {
+    background-color: #ff9800;
     border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-nav button:hover {
-    color: #ff9800; /* Highlight color on hover */
+#darkModeToggle:hover {
+    background-color: #e68a00; /* Darker on hover */
 }
 
 .main-content {
     padding: 80px 20px; /* Space for fixed header */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for content */
-    border-radius: 8px; /* Rounded corners for content */
+    max-width: 800px; /* Center content */
+    margin: 0 auto; /* Center content */
+    background-color: rgba(255, 255, 255, 0.95); /* Less transparent for better readability */
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.project, .team-member, .comment {
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for projects, team, and comments */
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+.projects, .team {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between project/team members */
 }
 
-.team-member {
-    display: flex; /* Align team member info in a row */
-    align-items: center; /* Center vertically */
+.project, .team-member {
+    background: rgba(255, 255, 255, 1); /* Fully opaque for projects and team */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.project button, .team-member img {
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 .team-member img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* Circular avatar */
-    margin-right: 10px;
+    border-radius: 50%; /* Circular team member images */
+    width: 100px; /* Fixed width for images */
+    height: 100px; /* Fixed height for images */
 }
 
 #commentList {
     margin-top: 20px;
 }
 
+.comment {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
 footer {
     text-align: center;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
 }
 
-.dark-mode footer {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent light footer in dark mode */
-}
-
+input[type="text"],
 textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px; /* Space between input and textarea */
 }
 
 button {
