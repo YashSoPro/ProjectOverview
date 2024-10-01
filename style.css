@@ -1,110 +1,24 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbarMenu = document.querySelector(".navbar-menu");
 
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    transition: background-color 0.5s, color 0.5s;
-    background-image: url('https://i.imgur.com/4c54wh9.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
+    themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+    });
 
-.app {
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: auto;
-}
+    mobileMenu.addEventListener("click", () => {
+        navbarMenu.classList.toggle("active");
+    });
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-}
-
-.navbar-menu li {
-    margin: 0 10px;
-}
-
-.navbar-menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.header {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.projects, .team, .comments {
-    margin: 20px 0;
-}
-
-.project-card, .team-member {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-#comments textarea {
-    width: 100%;
-    height: 100px;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-#submitComment {
-    margin-top: 10px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-body.dark-mode .navbar,
-body.dark-mode .project-card,
-body.dark-mode .team-member {
-    background-color: #444;
-}
-
-body.dark-mode #submitComment {
-    background-color: #17a2b8;
-}
+    document.getElementById("submitComment").addEventListener("click", () => {
+        const commentInput = document.getElementById("commentInput").value;
+        if (commentInput) {
+            alert("Comment submitted: " + commentInput);
+            document.getElementById("commentInput").value = ""; // Clear input
+        } else {
+            alert("Please enter a comment.");
+        }
+    });
+});
