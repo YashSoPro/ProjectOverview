@@ -1,109 +1,103 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: rgba(50, 50, 50, 0.85); /* Semi-transparent dark background */
-    color: #f4f4f4; /* Light text color */
-    transition: background 0.3s, color 0.3s;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: rgba(30, 30, 30, 0.9); /* Darker navbar with transparency */
-    color: #f4f4f4; /* Light text for navbar */
-}
-
-.header {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.projects, .team, .comments {
-    margin: 20px 0;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for sections */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-}
-
-.project {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for projects */
-    border-radius: 5px;
-}
-
-.team-member {
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-}
-
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Circular images for team members */
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    margin: 10px 0;
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for textarea */
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for textarea */
-    color: #333; /* Dark text for readability */
-}
-
-.btn {
-    padding: 10px 20px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #0056b3; /* Darker blue on hover */
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.imgur.com/4c54wh9.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    transition: background-color 0.5s ease;
 }
 
 .dark-mode {
-    background-color: rgba(20, 20, 20, 1); /* Dark background for dark mode */
+    background-color: #222; /* Dark background for dark mode */
     color: #f4f4f4; /* Light text for dark mode */
 }
 
-.dark-mode .navbar {
-    background: rgba(10, 10, 10, 1); /* Darker navbar in dark mode */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for header */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
-.dark-mode .projects, 
-.dark-mode .team, 
-.dark-mode .comments {
-    background: rgba(40, 40, 40, 0.9); /* Darker section backgrounds in dark mode */
-    color: #f4f4f4; /* Light text in dark mode */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: white;
+}
+
+nav button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav button:hover {
+    color: #ff9800; /* Highlight color on hover */
+}
+
+.main-content {
+    padding: 80px 20px; /* Space for fixed header */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for content */
+    border-radius: 8px; /* Rounded corners for content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project, .team-member, .comment {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for projects, team, and comments */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular avatar */
+    margin-right: 10px;
 }
 
 #commentList {
     margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.dark-mode footer {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent light footer in dark mode */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e68a00; /* Darker on hover */
 }
