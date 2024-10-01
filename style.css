@@ -26,6 +26,7 @@ body {
     position: fixed;
     top: 20px;
     width: 100%;
+    z-index: 10; /* Increased z-index to ensure it's on top */
 }
 
 .tab-list {
@@ -51,10 +52,28 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
 
 button:hover {
     background-color: #e68a00;
+}
+
+/* Tagline styling */
+.tagline {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.tagline h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
 /* Dropdown menu styles */
@@ -89,7 +108,7 @@ button:hover {
 
 /* Main content */
 .main-content {
-    padding: 100px 20px;
+    padding: 120px 20px; /* Increased padding to account for the tablist */
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -97,6 +116,7 @@ button:hover {
     max-width: 800px;
     z-index: 1;
     position: relative;
+    text-align: center; /* Center align content */
 }
 
 h2 {
@@ -109,17 +129,25 @@ h2 {
     gap: 15px;
 }
 
+/* Team member styling */
 .team-member {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
+    text-align: center; /* Center the text */
 }
 
 .team-member img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    word-wrap: break-word; /* Allow long names to break to the next line */
+    max-width: 100%; /* Make sure it doesn't go outside the container */
 }
 
 .project {
@@ -137,6 +165,7 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* View button adjustments */
 .view-button {
     display: inline-block;
     background-color: #ff9800;
@@ -147,6 +176,8 @@ h2 {
     cursor: pointer;
     text-decoration: none;
     margin-top: 10px;
+    float: right;
+    clear: both;
 }
 
 .view-button:hover {
@@ -173,5 +204,54 @@ textarea, input[type="text"] {
 }
 
 textarea {
-    height: 60px;
+    height: 80px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+}
+
+/* MOBILE STYLING */
+@media only screen and (max-width: 768px) {
+    .tab-list {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .tagline h1 {
+        font-size: 20px;
+    }
+
+    .team-member img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-member p {
+        font-size: 14px;
+    }
+
+    .project {
+        text-align: center;
+    }
+
+    .view-button {
+        float: none; /* Remove floating to center on mobile */
+        display: block;
+        margin: 10px auto 0 auto; /* Center button */
+    }
+
+    .main-content {
+        padding: 50px 10px;
+        margin: 20px 10px;
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }
