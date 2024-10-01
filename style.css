@@ -1,18 +1,81 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #f0f8ff; /* Light background color for better visibility */
+    font-family: Arial, sans-serif; /* Set a default font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar {
+    margin-bottom: 30px; /* Spacing below the navbar */
+}
+
+header {
+    margin-bottom: 40px; /* Spacing below the header */
+}
+
+h1 {
+    color: #333; /* Dark color for the main heading */
+}
+
+h2 {
+    color: #007bff; /* Primary color for section headings */
 }
 
 .card {
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border-radius: 15px; /* Rounded corners for cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s; /* Smooth transform on hover */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card-title {
+    color: #333; /* Dark color for card titles */
+}
+
+.card-text {
+    color: #666; /* Gray color for card text */
+}
+
+.btn {
+    border-radius: 20px; /* Rounded buttons */
 }
 
 footer {
-    margin-top: 20px;
-    font-size: 0.9em;
+    margin-top: 20px; /* Spacing above the footer */
+    font-size: 0.9em; /* Smaller font size for footer text */
+}
+
+.text-center {
+    text-align: center; /* Center align text */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Spacing below form groups */
+}
+
+label {
+    color: #333; /* Dark color for labels */
+}
+
+input, textarea {
+    border-radius: 5px; /* Rounded corners for input and textarea */
+    border: 1px solid #ccc; /* Light border color */
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text on buttons */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
