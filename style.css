@@ -1,122 +1,116 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    transition: background-color 0.5s, color 0.5s;
-    background-image: url('https://i.imgur.com/4c54wh9.png');
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: rgba(0, 0, 0, 0.5) url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed; /* Pirate theme background */
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    color: #fff;
 }
 
-.app {
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-}
-
-.navbar-menu {
-    list-style: none;
-    display: flex;
-}
-
-.navbar-menu li {
-    margin: 0 10px;
-}
-
-.navbar-menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.header {
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
     text-align: center;
-    margin: 20px 0;
+    z-index: 1000;
 }
 
-.projects, .team, .comments {
-    margin: 20px 0;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-.project-card, .team-member {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 10px 0;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
     padding: 15px;
-    border-radius: 8px;
+    margin: 15px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#comments textarea {
-    width: 100%;
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+.team-member {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
     height: 100px;
-    border-radius: 5px;
-    padding: 10px;
 }
 
-#submitComment {
-    margin-top: 10px;
-    padding: 10px 15px;
+textarea {
+    width: 100%;
+    padding: 10px;
     border: none;
-    background-color: #28a745;
-    color: white;
+    border-radius: 5px;
+}
+
+button {
+    background: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+button:hover {
+    background: #005f8a;
+}
+
+.comment {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.dark-mode {
+    background: #000;
+    color: #fff;
 }
 
 footer {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
 }
 
-.team-member {
+.testimonial-carousel {
     display: flex;
-    align-items: center;
+    overflow: auto;
 }
 
-.team-member .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-body.dark-mode .navbar,
-body.dark-mode .project-card,
-body.dark-mode .team-member {
-    background-color: #444;
-}
-
-body.dark-mode #submitComment {
-    background-color: #17a2b8;
+.testimonial {
+    min-width: 200px;
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
 }
