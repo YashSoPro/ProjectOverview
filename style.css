@@ -1,116 +1,114 @@
-body {
+* {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: rgba(0, 0, 0, 0.5) url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed; /* Pirate theme background */
-    background-size: cover;
-    color: #fff;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 20px;
-    text-align: center;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
     padding: 0;
+    box-sizing: border-box;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+body {
+    font-family: 'Arial', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: background 0.3s, color 0.3s;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 10px 0;
-}
-
-main {
+.container {
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
 }
 
-.project-card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.projects, .team, .comments {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 215, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
+.project:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .team-member {
     display: inline-block;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 
 .team-member img {
-    border-radius: 50%;
     width: 100px;
     height: 100px;
+    border-radius: 50%;
+    border: 2px solid #333;
 }
 
 textarea {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    height: 100px;
+    margin: 10px 0;
 }
 
-button {
-    background: #008CBA;
+.btn {
+    padding: 10px 20px;
+    background: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-button:hover {
-    background: #005f8a;
-}
-
-.comment {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.dark-mode {
-    background: #000;
-    color: #fff;
+.btn:hover {
+    background: #0056b3;
 }
 
 footer {
     text-align: center;
+    padding: 20px 0;
+}
+
+.dark-mode {
+    background: rgba(30, 30, 30, 0.9);
+    color: #fff;
+}
+
+.dark-mode .navbar {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.dark-mode .projects, 
+.dark-mode .team, 
+.dark-mode .comments {
+    background: rgba(50, 50, 50, 0.9);
+}
+
+.dark-mode .project {
+    background: rgba(255, 215, 0, 0.3);
+}
+
+#commentList {
     margin-top: 20px;
-}
-
-.testimonial-carousel {
-    display: flex;
-    overflow: auto;
-}
-
-.testimonial {
-    min-width: 200px;
-    margin: 0 10px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    border-radius: 10px;
 }
