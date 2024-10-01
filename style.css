@@ -10,13 +10,13 @@ body {
 }
 
 .dark-mode {
-    background-color: #222; /* Dark background for dark mode */
-    color: #f4f4f4; /* Light text for dark mode */
+    background-color: #222;
+    color: #f4f4f4;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker semi-transparent background for header */
-    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -30,93 +30,130 @@ nav {
 
 nav h1 {
     color: white;
-}
-
-#darkModeToggle {
-    background-color: #ff9800;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#darkModeToggle:hover {
-    background-color: #e68a00; /* Darker on hover */
-}
-
-.main-content {
-    padding: 80px 20px; /* Space for fixed header */
-    max-width: 800px; /* Center content */
-    margin: 0 auto; /* Center content */
-    background-color: rgba(255, 255, 255, 0.95); /* Less transparent for better readability */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.projects, .team {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between project/team members */
-}
-
-.project, .team-member {
-    background: rgba(255, 255, 255, 1); /* Fully opaque for projects and team */
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.project button, .team-member img {
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.team-member img {
-    border-radius: 50%; /* Circular team member images */
-    width: 100px; /* Fixed width for images */
-    height: 100px; /* Fixed height for images */
-}
-
-#commentList {
-    margin-top: 20px;
-}
-
-.comment {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px; /* Space between input and textarea */
+    font-size: 1.5em;
 }
 
 button {
     background-color: #ff9800;
     border: none;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e68a00; /* Darker on hover */
+    background-color: #e68a00;
+}
+
+.main-content {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px; /* Limit the width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+h2 {
+    text-align: center;
+}
+
+.projects, .team {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between project and team items */
+    opacity: 0; /* Start hidden for fade-in effect */
+    animation: fadeIn 0.5s forwards; /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.project, .team-member {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* Add a small animation */
+}
+
+.project:hover, .team-member:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+.team-member img {
+    width: 80px; /* Set a fixed size for team member images */
+    height: 80px; /* Set a fixed size for team member images */
+    border-radius: 50%; /* Circular images */
+    margin-right: 10px; /* Space between image and name */
+}
+
+#commentList {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+textarea, input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px; /* Space above inputs */
+}
+
+textarea {
+    height: 60px; /* Set a fixed height for the textarea */
+}
+
+.comment {
+    word-wrap: break-word; /* Ensure long words break */
+    max-width: 100%; /* Make sure comments don't overflow */
+}
+
+.dark-mode footer {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure full-screen semi-transparent box on mobile */
+@media (max-width: 768px) {
+    .main-content {
+        background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque for mobile */
+        padding: 20px; /* Adjust padding */
+        margin: 10px; /* Adjust margin */
+    }
+    nav ul {
+        display: none; /* Hide regular menu */
+        flex-direction: column; /* Stack menu items */
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
+        top: 60px; /* Position below navbar */
+        width: 100%; /* Full width */
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        display: flex; /* Show dropdown when active */
+    }
+}
+
+/* Dropdown button */
+.dropdown {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
