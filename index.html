@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
 </head>
 <body>
-    <header>
-        <h1>Project Overview</h1>
-    </header>
+    <!-- U-shaped container for buttons -->
     <div class="buttons-container">
-        <div class="dropdown">
-            <button class="dropdown-button">All Projects</button>
-            <ul class="dropdown-menu">
-                <li><a href="#" class="project-link">OpenIMG</a></li>
-                <!-- Add more project links here -->
-            </ul>
+        <div class="u-shaped-box">
+            <div class="dropdown">
+                <button class="dropdown-button">All Projects</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="project-link">OpenIMG</a></li>
+                    <!-- More projects will be added here -->
+                </ul>
+            </div>
+            <button id="discordButton">Discord Server</button>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
         </div>
-        <button id="discordButton">Discord Server</button>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
     </div>
+
     <div class="main-content">
         <h2>Our Projects</h2>
         <div class="projects">
@@ -32,6 +33,7 @@
             </div>
             <!-- Add more projects as needed -->
         </div>
+
         <h2>Our Team</h2>
         <div class="team">
             <div class="team-member">
@@ -51,6 +53,7 @@
                 <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
             </div>
         </div>
+
         <h2>Leave a Comment</h2>
         <form id="commentForm">
             <input type="text" id="nameInput" placeholder="Your Name" required>
@@ -59,9 +62,11 @@
         </form>
         <div id="commentList"></div>
     </div>
+    
     <footer>
         <p>&nbsp;</p>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script src="script.js"></script>
 </body>
