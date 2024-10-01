@@ -19,21 +19,23 @@ body {
     color: #f4f4f4;
 }
 
-/* Tablist container for buttons */
+/* U-shaped tablist container for buttons */
 .tab-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    position: fixed;
+    top: 20px;
+    width: 100%;
 }
 
 .tab-list {
     list-style-type: none;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
-    justify-content: space-evenly;
+    gap: 20px;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -87,7 +89,7 @@ button:hover {
 
 /* Main content */
 .main-content {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -131,13 +133,20 @@ h2 {
     margin-bottom: 10px;
 }
 
+.project p {
+    margin-bottom: 10px;
+}
+
 .view-button {
+    display: inline-block;
     background-color: #ff9800;
     border: none;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
 .view-button:hover {
