@@ -1,6 +1,6 @@
 /* Basic styling for the layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
     margin: 0;
     padding: 0;
     background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
@@ -16,6 +16,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center align content */
 }
 
 /* Styling for the tablist */
@@ -59,11 +60,12 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    font-style: italic; /* Italic style for the tagline */
 }
 
 .tagline i {
     font-size: 24px;
-    color: #007BFF;
+    color: #007BFF; /* Default color for the icon */
 }
 
 /* Projects styling */
@@ -71,7 +73,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center; /* Center align projects */
 }
 
 .project {
@@ -81,6 +83,11 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-basis: calc(33.333% - 20px);
     margin-bottom: 20px;
+    transition: transform 0.3s; /* Animation on hover */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 .view-project {
@@ -98,7 +105,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Center align team members */
+    margin-top: 20px; /* Added margin for spacing */
 }
 
 .team-member {
@@ -108,6 +116,11 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-basis: calc(25% - 20px);
+    transition: transform 0.3s; /* Animation on hover */
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 .team-member img {
