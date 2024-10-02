@@ -21,13 +21,12 @@ body {
 /* Styling for the tablist */
 .tablist {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #007BFF;
     border-radius: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
 }
 
 .tab-buttons {
@@ -35,76 +34,71 @@ body {
     gap: 10px;
 }
 
-.tab-buttons button, .tab-buttons .dropbtn {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
+.tab-buttons button {
+    background-color: #ffffff;
+    color: #007BFF;
+    padding: 10px 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.tab-buttons .dropbtn {
-    padding-right: 30px;
-}
-
-.tab-buttons button:hover, .tab-buttons .dropbtn:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive fix for mobile */
-@media (max-width: 768px) {
-    .tablist {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .tab-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
+.tab-buttons button:hover {
+    background-color: #0056b3;
     color: #ffffff;
 }
 
-body.dark-mode .main-content {
-    background-color: rgba(20, 20, 20, 0.95);
+/* Projects styling */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-body.dark-mode .tab-buttons button, body.dark-mode .dropbtn {
-    background-color: #007BFF;
+.project {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(33.333% - 20px);
+    margin-bottom: 20px;
+}
+
+.view-project {
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-body.dark-mode .comment {
-    background-color: rgba(50, 50, 50, 0.9);
+/* Team section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-basis: calc(25% - 20px);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 /* Comment section styling */
@@ -112,9 +106,11 @@ body.dark-mode .comment {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
-#commentForm input, #commentForm textarea {
+#commentForm input,
+#commentForm textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -129,50 +125,82 @@ body.dark-mode .comment {
     cursor: pointer;
 }
 
-/* Projects styling */
-.projects {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.comment {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.project {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    padding: 15px;
-    transition: transform 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-#commentList {
+/* Discord join button */
+.discord-join {
+    text-align: center;
     margin-top: 20px;
 }
 
-/* Team section */
-.team {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+#joinDiscord {
+    background-color: #7289DA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+body.dark-mode .main-content {
+    background-color: rgba(30, 30, 30, 0.9);
+}
+
+body.dark-mode .tablist {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .tab-buttons button {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode .tab-buttons button:hover {
+    background-color: #4a4a4a;
+}
+
+body.dark-mode .project,
+body.dark-mode .team-member,
+body.dark-mode .comment {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+body.dark-mode #commentForm input,
+body.dark-mode #commentForm textarea {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #4a4a4a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .projects,
+    .team {
+        flex-direction: column;
+    }
+
+    .project,
+    .team-member {
+        flex-basis: 100%;
+    }
+
+    .tab-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* Smooth scrolling */
@@ -184,9 +212,5 @@ html {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-    }
-    
-    .project:hover {
-        transform: none;
     }
 }
