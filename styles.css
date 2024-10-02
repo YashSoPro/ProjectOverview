@@ -1,3 +1,81 @@
+ Updated HTML File (index.html)
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="tablist">
+            <div class="tab-buttons">
+                <button onclick="showProjects()">GitShowcase</button>
+                <div class="dropdown">
+                    <button class="dropbtn">More</button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <button id="darkModeToggle">Toggle Dark Mode</button>
+            </div>
+        </div>
+
+        <div class="projects">
+            <div class="project">
+                <h3>OpenIMG</h3>
+                <p>A work in progress where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
+            </div>
+            <div class="project">
+                <h3>ProjectAd</h3>
+                <p>A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
+            </div>
+            <div class="project">
+                <h3>EmuinaBox</h3>
+                <p>Run Windows x86 applications on Termux using Box64 and Wine.</p>
+            </div>
+        </div>
+
+        <h2>Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
+                <p>SableMeow (Founder)</p>
+            </div>
+            <div class="team-member">
+                <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
+                <p>Econome (Member)</p>
+            </div>
+            <div class="team-member">
+                <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
+                <p>Zephyx (Member)</p>
+            </div>
+            <div class="team-member">
+                <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
+                <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
+            </div>
+        </div>
+
+        <!-- Comment section -->
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <input type="text" id="nameInput" placeholder="Your Name" required>
+            <textarea placeholder="Your comment here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="commentList"></div>
+    </div>
+    <script src="script.js" defer></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
+2. Updated CSS File (styles.css)
+css
+Copy code
 /* Basic styling for the layout */
 body {
     font-family: Arial, sans-serif;
@@ -152,4 +230,24 @@ body.dark-mode .comment {
 
 #commentList {
     margin-top: 20px;
+}
+
+/* Team section */
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-member .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
