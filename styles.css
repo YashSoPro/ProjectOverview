@@ -5,6 +5,7 @@ body {
     padding: 0;
     background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
     background-size: cover;
+    color: #333; /* Base color for text */
 }
 
 .main-content {
@@ -14,6 +15,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Styling for the tablist */
@@ -173,6 +175,17 @@ body {
 
     .tab-buttons {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
     }
+}
+
+/* Comment section styling */
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#commentList {
+    margin-top: 20px;
 }
