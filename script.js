@@ -2,7 +2,7 @@ document.getElementById("commentForm").addEventListener("submit", function(event
     event.preventDefault();
     
     const nameInput = document.getElementById("nameInput").value;
-    const commentInput = event.target[1].value; // Get the comment from the textarea
+    const commentInput = document.getElementById("commentInput").value; // Get the comment from the textarea
 
     // Create a new comment element
     const commentElement = document.createElement("div");
@@ -25,5 +25,20 @@ toggleButton.addEventListener("click", function() {
         toggleButton.textContent = "Light Mode";
     } else {
         toggleButton.textContent = "Dark Mode";
+    }
+});
+
+// Hamburger Menu Functionality
+const hamburger = document.getElementById("hamburger");
+const navbarContent = document.getElementById("navbarContent");
+
+hamburger.addEventListener("click", function() {
+    navbarContent.classList.toggle("show");
+});
+
+// Close the menu when clicking outside
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('.hamburger') && navbarContent.classList.contains('show')) {
+        navbarContent.classList.remove("show");
     }
 });
