@@ -1,8 +1,8 @@
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    this.innerText = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    document.body.classList.toggle('dark-mode'); // Toggle the dark-mode class on the body
+    this.innerText = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode'; // Change button text based on mode
 });
 
 // Comment Submission
@@ -18,12 +18,12 @@ commentForm.addEventListener('submit', function (event) {
     // Create a new comment element
     const commentDiv = document.createElement('div');
     commentDiv.classList.add('comment');
-    commentDiv.innerHTML = `<strong>${nameInput.value}:</strong> ${commentText}`;
+    commentDiv.innerHTML = `<strong>${nameInput.value}:</strong> ${commentText}`; // Format the comment display
 
     // Append the comment to the comment list
     commentList.appendChild(commentDiv);
 
     // Clear the form inputs
-    nameInput.value = '';
-    commentForm.querySelector('textarea').value = '';
+    nameInput.value = ''; // Clear the name input
+    commentForm.querySelector('textarea').value = ''; // Clear the comment textarea
 });
