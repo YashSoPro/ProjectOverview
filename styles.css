@@ -214,3 +214,19 @@ html {
         scroll-behavior: auto;
     }
 }
+
+/* Tagline styling */
+.tagline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tagline i {
+    font-size: 24px;
+    color: #007BFF;
+}
