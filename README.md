@@ -1,2 +1,2 @@
 # ProjectOverview
-a site for your team
+a site for our team
