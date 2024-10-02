@@ -6,10 +6,11 @@
     <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/css/ionicons.min.css">
 </head>
 <body>
     <div class="main-content">
-        <div class="tablist">
+        <div class="tablist animate__animated animate__fadeIn">
             <div class="tab-buttons">
                 <button type="button" onclick="scrollToSection('projects')">Projects</button>
                 <button type="button" onclick="scrollToSection('team')">Team</button>
@@ -18,62 +19,61 @@
             </div>
         </div>
 
-        <div class="tagline">
-            <i class="fas fa-quote-left"></i>
+        <div class="tagline animate__animated animate__fadeIn">
+            <i class="icon ion-quote"></i>
             <h2>We make your ideas into reality.</h2>
         </div>
 
         <div id="projects" class="projects">
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>OpenIMG</h3>
                 <p>A work in progress where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
                 <button class="view-project">View Project</button>
             </div>
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>ProjectAd</h3>
                 <p>A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
                 <button class="view-project">View Project</button>
             </div>
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>EmuinaBox</h3>
                 <p>Run Windows x86 applications on Termux using Box64 and Wine.</p>
                 <button class="view-project">View Project</button>
             </div>
         </div>
 
-        <h2 id="team">Team</h2>
+        <h2 id="team" class="animate__animated animate__fadeIn">Team</h2>
         <div class="team">
-            <div class="team-member">
+            <div class="team-member animate__animated animate__fadeIn">
                 <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
                 <p>SableMeow (Founder)</p>
             </div>
-            <div class="team-member">
+            <div class="team-member animate__animated animate__fadeIn">
                 <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
                 <p>Econome (Member)</p>
             </div>
-            <div class="team-member">
+            <div class="team-member animate__animated animate__fadeIn">
                 <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
                 <p>Zephyx (Member)</p>
             </div>
-            <div class="team-member">
+            <div class="team-member animate__animated animate__fadeIn">
                 <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
                 <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
             </div>
         </div>
 
-        <h2 id="comments">Leave a Comment</h2>
+        <h2 id="comments" class="animate__animated animate__fadeIn">Leave a Comment</h2>
         <form id="commentForm">
             <input type="text" id="nameInput" placeholder="Your Name" required>
             <textarea id="commentText" placeholder="Your comment here..." required></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" class="animate__animated animate__fadeIn">Submit</button>
         </form>
-        <div id="commentList"></div>
+        <div id="commentList" class="animate__animated animate__fadeIn"></div>
 
-        <div class="discord-join">
+        <div class="discord-join animate__animated animate__fadeIn">
             <button id="joinDiscord">Join Our Discord</button>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="script.js" defer></script>
 </body>
