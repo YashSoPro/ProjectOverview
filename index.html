@@ -3,91 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Project Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Project Overview</h1>
-            <h2>“We turn your ideas into reality”</h2>
-            <p><strong>This page showcases our projects and team members. Explore and see what we have been working on!</strong></p>
+    <div class="navbar">
+        <h1 style="text-align: center;">Project Overview</h1>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <button id="projectListButton" onclick="toggleProjectList()">
+                <span class="bgContainer">
+                    <span>Projects</span>
+                </span>
+            </button>
+            <button id="discordButton" onclick="window.open('https://discord.gg/byAggyEXNA', '_blank')">
+                <span class="bgContainer">
+                    <span>Discord</span>
+                </span>
+            </button>
+            <button id="darkModeToggle">
+                <span class="bgContainer">
+                    <span>Dark Mode</span>
+                </span>
+            </button>
         </div>
-    </header>
-
-    <div class="tablist">
-        <button onclick="toggleDropdown()">
-            <span>Projects</span>
-            <div id="dropdown-content" class="dropdown-content">
-                <a href="#openimg">OpenIMG</a>
-                <a href="#projectad">ProjectAd</a>
-                <a href="#emuinabox">EmuinaBox</a>
-            </div>
-        </button>
-
-        <button>
-            <span>Discord Server</span>
-            <a href="https://discord.gg/byAggyEXNA" target="_blank"></a>
-        </button>
-
-        <button id="darkModeToggle">
-            <span>Toggle Dark Mode</span>
-        </button>
     </div>
 
-    <div class="main-content">
-        <div class="project-list">
-            <div class="project">
-                <h3>OpenIMG</h3>
-                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly. <strong>Work in progress soon.</strong></p>
-                <a class="view-btn" href="#openimg">View</a>
-            </div>
-
-            <div class="project">
-                <h3>ProjectAd</h3>
-                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
-                <a class="view-btn" href="https://github.com/YashSoPro/projectadd" target="_blank">View</a>
-            </div>
-
-            <div class="project">
-                <h3>EmuinaBox</h3>
-                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
-                <a class="view-btn" href="https://github.com/YashSoPro/emuinabox" target="_blank">View</a>
-            </div>
-        </div>
-
-        <h2>Our Team</h2>
-        <div class="team">
-            <div class="team-member">
-                <h3>SableMeow</h3>
-                <p>(Founder)</p>
-            </div>
-            <div class="team-member">
-                <h3>Econome</h3>
-                <p>(Member)</p>
-            </div>
-            <div class="team-member">
-                <h3>Zephyx</h3>
-                <p>(Member)</p>
-            </div>
-            <div class="team-member">
-                <h3>Uranüs PortakalMandalinaSuyuAdam</h3>
-                <p>(Member)</p>
-            </div>
-        </div>
-
-        <h2>Leave a Comment</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <textarea placeholder="Your comment here..." required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="project-list" id="projectList" style="display: none;">
+        <ul>
+            <li>
+                <h2>OpenIMG</h2>
+                <p>Work in progress, soon!</p>
+                <a href="https://github.com/YashSoPro/OpenIMG" target="_blank">View Project</a>
+            </li>
+            <li>
+                <h2>EmuinaBox</h2>
+                <p>Runs Windows x86 applications in Termux.</p>
+                <a href="https://github.com/YashSoPro/emuinabox" target="_blank">View Project</a>
+            </li>
+            <li>
+                <h2>ProjectAd</h2>
+                <p>Gateway to an immersive multimedia experience.</p>
+                <a href="https://github.com/YashSoPro/projectadd" target="_blank">View Project</a>
+            </li>
+        </ul>
     </div>
-
-    <footer>
-        <p>© 2024 Project Overview. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
