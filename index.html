@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <div class="main-content animate__animated animate__fadeIn">
-        <!-- Tablist with three buttons -->
+    <div class="main-content">
         <div class="tablist">
             <h2>Project Overview</h2>
             <div class="tab-buttons">
-                <!-- Dropdown for projects -->
                 <div class="dropdown">
                     <button class="dropbtn">Projects</button>
                     <div class="dropdown-content">
@@ -22,70 +20,62 @@
                         <a href="#">EmuinaBox</a>
                     </div>
                 </div>
-
-                <!-- Discord Server button -->
                 <button class="discord-btn">
                     <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
                 </button>
-
-                <!-- Dark/Light Mode Toggle -->
                 <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
             </div>
         </div>
 
-        <!-- Tagline and description -->
         <p class="tagline"><span class="big-quote">“</span>We turn your ideas into reality<span class="big-quote">”</span></p>
         <p class="description"><b>This page showcases our projects and team members. Explore and see what we have been working on!</b></p>
 
-        <!-- Projects section -->
         <div class="projects">
-            <div class="project animate__animated animate__fadeInUp">
+            <div class="project">
                 <h3>OpenIMG</h3>
                 <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
                 <button class="view-btn"><a href="#">View</a></button>
             </div>
-            <div class="project animate__animated animate__fadeInUp">
+            <div class="project">
                 <h3>ProjectAd</h3>
                 <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
                 <button class="view-btn"><a href="#">View</a></button>
             </div>
-            <div class="project animate__animated animate__fadeInUp">
+            <div class="project">
                 <h3>EmuinaBox</h3>
                 <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
                 <button class="view-btn"><a href="#">View</a></button>
             </div>
         </div>
 
-        <!-- Team section -->
         <h2>Our Team</h2>
         <div class="team">
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
                 <p>SableMeow (Founder)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
                 <p>Econome (Member)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
                 <p>Zephyx (Member)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
                 <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
             </div>
         </div>
 
-        <!-- Comment section -->
         <h2>Leave a Comment</h2>
-        <form id="commentForm" class="animate__animated animate__fadeInUp">
+        <form id="commentForm">
             <input type="text" id="nameInput" placeholder="Your Name" required>
             <textarea placeholder="Your comment here..." required></textarea>
             <button type="submit">Submit</button>
         </form>
         <div id="commentList"></div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
