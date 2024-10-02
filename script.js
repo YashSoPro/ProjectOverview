@@ -1,17 +1,29 @@
-// Function to toggle the visibility of the project list
-function toggleProjectList() {
-    const projectList = document.getElementById("projectList");
-    projectList.style.display = projectList.style.display === "none" ? "block" : "none";
-}
+document.getElementById("commentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const nameInput = document.getElementById("nameInput").value;
+    const commentInput = event.target[1].value; // Get the comment from the textarea
 
-// Function to toggle dark mode
-document.getElementById("darkModeToggle").addEventListener("click", function() {
+    // Create a new comment element
+    const commentElement = document.createElement("div");
+    commentElement.classList.add("comment");
+    commentElement.textContent = `${nameInput}: ${commentInput}`;
+    
+    // Append the new comment to the comment list
+    document.getElementById("commentList").appendChild(commentElement);
+    
+    // Clear the form
+    event.target.reset();
+});
+
+// Dark/Light Mode Toggle Functionality
+const toggleButton = document.getElementById("darkModeToggle");
+
+toggleButton.addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
-
-    // Optional: Update button text based on dark mode state
     if (document.body.classList.contains("dark-mode")) {
-        this.querySelector('.bgContainer > span').textContent = "Light Mode";
+        toggleButton.textContent = "Light Mode";
     } else {
-        this.querySelector('.bgContainer > span').textContent = "Dark Mode";
+        toggleButton.textContent = "Dark Mode";
     }
 });
