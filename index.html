@@ -11,48 +11,46 @@
     <div class="main-content">
         <div class="tablist">
             <div class="tab-buttons">
-                <div class="dropdown">
-                    <button type="button" class="dropbtn">Menu</button>
-                    <div class="dropdown-content">
-                        <a href="#projects">Projects</a>
-                        <a href="#team">Team</a>
-                        <a href="#comments">Comments</a>
-                    </div>
-                </div>
+                <button type="button" onclick="scrollToSection('projects')">Projects</button>
+                <button type="button" onclick="scrollToSection('team')">Team</button>
+                <button type="button" onclick="scrollToSection('comments')">Comments</button>
                 <button type="button" id="darkModeToggle">Toggle Dark Mode</button>
             </div>
         </div>
 
         <div id="projects" class="projects">
-            <div class="project animate__animated animate__fadeIn">
+            <div class="project">
                 <h3>OpenIMG</h3>
                 <p>A work in progress where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
+                <button class="view-project">View Project</button>
             </div>
-            <div class="project animate__animated animate__fadeIn">
+            <div class="project">
                 <h3>ProjectAd</h3>
                 <p>A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
+                <button class="view-project">View Project</button>
             </div>
-            <div class="project animate__animated animate__fadeIn">
+            <div class="project">
                 <h3>EmuinaBox</h3>
                 <p>Run Windows x86 applications on Termux using Box64 and Wine.</p>
+                <button class="view-project">View Project</button>
             </div>
         </div>
 
         <h2 id="team">Team</h2>
         <div class="team">
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
                 <p>SableMeow (Founder)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
                 <p>Econome (Member)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
                 <p>Zephyx (Member)</p>
             </div>
-            <div class="team-member animate__animated animate__fadeInLeft">
+            <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
                 <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
             </div>
@@ -65,7 +63,12 @@
             <button type="submit">Submit</button>
         </form>
         <div id="commentList"></div>
+
+        <div class="discord-join">
+            <button id="joinDiscord">Join Our Discord</button>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
