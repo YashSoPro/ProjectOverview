@@ -1,44 +1,27 @@
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    const nameInput = document.getElementById("nameInput").value;
-    const commentInput = document.getElementById("commentInput").value; // Get the comment from the textarea
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
 
-    // Create a new comment element
-    const commentElement = document.createElement("div");
-    commentElement.classList.add("comment");
-    commentElement.textContent = `${nameInput}: ${commentInput}`;
-    
-    // Append the new comment to the comment list
-    document.getElementById("commentList").appendChild(commentElement);
-    
-    // Clear the form
-    event.target.reset();
-});
+    // Toggle Dark Mode
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
 
-// Dark/Light Mode Toggle Functionality
-const toggleButton = document.getElementById("darkModeToggle");
+    // Handle comment submission
+    commentForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-toggleButton.addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        toggleButton.textContent = "Light Mode";
-    } else {
-        toggleButton.textContent = "Dark Mode";
-    }
-});
+        const name = document.getElementById('nameInput').value;
+        const comment = commentForm.querySelector('textarea').value;
 
-// Hamburger Menu Functionality
-const hamburger = document.getElementById("hamburger");
-const navbarContent = document.getElementById("navbarContent");
+        if (name && comment) {
+            const commentItem = document.createElement('div');
+            commentItem.textContent = `${name}: ${comment}`;
+            commentList.appendChild(commentItem);
 
-hamburger.addEventListener("click", function() {
-    navbarContent.classList.toggle("show");
-});
-
-// Close the menu when clicking outside
-window.addEventListener("click", function(event) {
-    if (!event.target.matches('.hamburger') && navbarContent.classList.contains('show')) {
-        navbarContent.classList.remove("show");
-    }
+            // Clear the form
+            commentForm.reset();
+        }
+    });
 });
