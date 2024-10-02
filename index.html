@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <div class="main-content">
@@ -14,7 +16,7 @@
             <div class="tab-buttons">
                 <!-- Dropdown for projects -->
                 <div class="dropdown">
-                    <button class="dropbtn">Projects</button>
+                    <button class="dropbtn">Projects <i class="fas fa-caret-down"></i></button>
                     <div class="dropdown-content">
                         <a href="#">OpenIMG</a>
                         <a href="#">ProjectAd</a>
@@ -24,11 +26,11 @@
 
                 <!-- Discord Server button -->
                 <button class="discord-btn">
-                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
+                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server <i class="fab fa-discord"></i></a>
                 </button>
 
                 <!-- Dark/Light Mode Toggle -->
-                <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
+                <button id="darkModeToggle" class="toggle-btn">Dark Mode <i class="fas fa-adjust"></i></button>
             </div>
         </div>
 
@@ -38,17 +40,17 @@
 
         <!-- Projects section -->
         <div class="projects">
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>OpenIMG</h3>
                 <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
                 <button class="view-btn"><a href="#">View</a></button>
             </div>
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>ProjectAd</h3>
                 <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
                 <button class="view-btn"><a href="#">View</a></button>
             </div>
-            <div class="project">
+            <div class="project animate__animated animate__fadeIn">
                 <h3>EmuinaBox</h3>
                 <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
                 <button class="view-btn"><a href="#">View</a></button>
@@ -80,7 +82,7 @@
         <h2>Leave a Comment</h2>
         <form id="commentForm">
             <input type="text" id="nameInput" placeholder="Your Name" required>
-            <textarea placeholder="Your comment here..." required></textarea>
+            <textarea id="commentInput" placeholder="Your comment here..." required></textarea>
             <button type="submit">Submit</button>
         </form>
         <div id="commentList"></div>
