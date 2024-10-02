@@ -1,19 +1,23 @@
-// Dark mode toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+// Function to toggle dark mode
+document.getElementById("darkModeToggle").addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
 });
 
-// Store dark mode preference
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
+// Function to toggle dropdown menu
+function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown-content');
+    dropdown.classList.toggle('show');
 }
 
-darkModeToggle.addEventListener('click', () => {
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.removeItem('theme');
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.tablist button')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-});
+}
