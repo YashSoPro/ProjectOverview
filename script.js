@@ -64,7 +64,7 @@ const animateOnScroll = (entries, observer) => {
 // Observe sections for scroll animations
 const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.1 });
 
-// Observe each project and team member for animations
+// Observe each project, team member, tagline, and heading for animations
 document.querySelectorAll('.project, .team-member, .tagline, h2').forEach(el => {
     observer.observe(el);
 });
