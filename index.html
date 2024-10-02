@@ -3,96 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
+    <title>Your Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="main-content">
-        <!-- Tablist with three buttons -->
-        <div class="tablist">
-            <h2>Project Overview</h2>
-            <div class="tab-buttons">
-                <!-- Dropdown for projects -->
-                <div class="dropdown">
-                    <button class="dropbtn">Projects</button>
-                    <div class="dropdown-content">
-                        <a href="#">OpenIMG</a>
-                        <a href="#">ProjectAd</a>
-                        <a href="#">EmuinaBox</a>
-                        <a href="#">DisClock</a>
-                    </div>
-                </div>
+        <h1 class="tagline">We turn your ideas into reality</h1>
 
-                <!-- Discord Server button -->
-                <button class="discord-btn">
-                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
-                </button>
-
-                <!-- Dark/Light Mode Toggle -->
-                <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
+        <nav class="navbar">
+            <div class="nav-items">
+                <div class="tablist" id="projectsButton">Projects</div>
+                <div class="tablist" id="discordButton">Discord</div>
+                <div class="toggle-btn" id="darkModeToggle">Dark Mode</div>
             </div>
+            <div class="hamburger" id="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        </nav>
+
+        <div class="projects" id="projectsSection">
+            <div class="project">
+                <h2>Project 1</h2>
+                <button class="view-btn"><a href="#">View</a></button>
+            </div>
+            <!-- More projects can be added here -->
         </div>
 
-        <!-- Tagline and description -->
-        <p class="tagline"><span class="big-quote">“</span>We turn your ideas into reality<span class="big-quote">”</span></p>
-        <p class="description"><b>This page showcases our projects and team members. Explore and see what we have been working on!</b></p>
-
-        <!-- Projects section -->
-        <div class="projects">
-            <div class="project">
-                <h3>OpenIMG</h3>
-                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
-                <button class="view-btn"><a href="#">View</a></button>
-            </div>
-            <div class="project">
-                <h3>ProjectAd</h3>
-                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
-                <button class="view-btn"><a href="#">View</a></button>
-            </div>
-            <div class="project">
-                <h3>EmuinaBox</h3>
-                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
-                <button class="view-btn"><a href="#">View</a></button>
-            </div>
-            <div class="project">
-                <h3>DisClock</h3>
-                <p>A project showcasing a clock that can display various information in a user-friendly manner.</p>
-                <button class="view-btn"><a href="#">View</a></button>
-            </div>
-        </div>
-
-        <!-- Team section -->
-        <h2>Our Team</h2>
-        <div class="team">
-            <div class="team-member">
-                <img src="https://i.imgur.com/ZnG5FwU.png" alt="SableMeow">
-                <p>SableMeow</p>
-                <p>Founder</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.imgur.com/ZnG5FwU.png" alt="Econome">
-                <p>Econome</p>
-                <p>Developer</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.imgur.com/ZnG5FwU.png" alt="Zephyx">
-                <p>Zephyx</p>
-                <p>Designer</p>
-            </div>
-            <div class="team-member">
-                <img src="https://i.imgur.com/ZnG5FwU.png" alt="Uranüs PortakalMandalinaSuyuAdam">
-                <p>Uranüs PortakalMandalinaSuyuAdam</p>
-                <p>Marketer</p>
-            </div>
-        </div>
-
-        <!-- Comment section -->
-        <h2>Leave a Comment</h2>
-        <form id="commentForm">
+        <div id="commentForm">
+            <h2>Leave a Comment</h2>
             <input type="text" id="nameInput" placeholder="Your Name" required>
-            <textarea placeholder="Your Comment" required></textarea>
+            <textarea id="commentInput" placeholder="Your Comment" required></textarea>
             <button type="submit">Submit</button>
-        </form>
+        </div>
 
         <div id="commentList"></div>
     </div>
