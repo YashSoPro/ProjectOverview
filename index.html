@@ -3,83 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Project Overview</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="tablist">
-                <span class="project-overview">Project Overview</span>
-                <div class="buttons">
-                    <div class="dropdown">
-                        <button class="dropbtn">Projects</button>
-                        <div class="dropdown-content">
-                            <a href="#">OpenIMG (Work in progress)</a>
-                            <a href="https://github.com/YashSoPro/emuinabox">EmuinaBox</a>
-                            <a href="https://github.com/YashSoPro/projectadd">ProjectAd</a>
-                        </div>
-                    </div>
-                    <button class="btn" onclick="window.location.href='https://discord.gg/byAggyEXNA'">Discord Server</button>
-                    <button class="btn" id="darkModeToggle">Dark Mode</button>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <h1>“We turn your ideas into reality”</h1>
-            <p class="description">This page showcases our projects and team members. Explore and see what we have been working on!</p>
-
-            <h2>Our Projects</h2>
-            <div class="project-list">
-                <div class="project">
-                    <h3>OpenIMG (Work in progress)</h3>
-                    <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
-                </div>
-                <div class="project">
-                    <h3>EmuinaBox</h3>
-                    <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
-                    <a class="view-btn" href="https://github.com/YashSoPro/emuinabox">View</a>
-                </div>
-                <div class="project">
-                    <h3>ProjectAd</h3>
-                    <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
-                    <a class="view-btn" href="https://github.com/YashSoPro/projectadd">View</a>
-                </div>
-            </div>
-
-            <h2>Our Team</h2>
-            <div class="team">
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
-                    <p>SableMeow (Founder)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
-                    <p>Econome (Member)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
-                    <p>Zephyx (Member)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
-                    <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
-                </div>
-            </div>
-
-            <h2>Leave a Comment</h2>
-            <form id="commentForm">
-                <input type="text" id="nameInput" placeholder="Your Name" required>
-                <textarea placeholder="Your comment here..." required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="commentList"></div>
+    <header>
+        <div class="container">
+            <h1>Project Overview</h1>
+            <h2>“We turn your ideas into reality”</h2>
+            <p><strong>This page showcases our projects and team members. Explore and see what we have been working on!</strong></p>
         </div>
+    </header>
+
+    <div class="tablist">
+        <button onclick="toggleDropdown()">
+            <span>Projects</span>
+            <div id="dropdown-content" class="dropdown-content">
+                <a href="#openimg">OpenIMG</a>
+                <a href="#projectad">ProjectAd</a>
+                <a href="#emuinabox">EmuinaBox</a>
+            </div>
+        </button>
+
+        <button>
+            <span>Discord Server</span>
+            <a href="https://discord.gg/byAggyEXNA" target="_blank"></a>
+        </button>
+
+        <button id="darkModeToggle">
+            <span>Toggle Dark Mode</span>
+        </button>
+    </div>
+
+    <div class="main-content">
+        <div class="project-list">
+            <div class="project">
+                <h3>OpenIMG</h3>
+                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly. <strong>Work in progress soon.</strong></p>
+                <a class="view-btn" href="#openimg">View</a>
+            </div>
+
+            <div class="project">
+                <h3>ProjectAd</h3>
+                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
+                <a class="view-btn" href="https://github.com/YashSoPro/projectadd" target="_blank">View</a>
+            </div>
+
+            <div class="project">
+                <h3>EmuinaBox</h3>
+                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
+                <a class="view-btn" href="https://github.com/YashSoPro/emuinabox" target="_blank">View</a>
+            </div>
+        </div>
+
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <h3>SableMeow</h3>
+                <p>(Founder)</p>
+            </div>
+            <div class="team-member">
+                <h3>Econome</h3>
+                <p>(Member)</p>
+            </div>
+            <div class="team-member">
+                <h3>Zephyx</h3>
+                <p>(Member)</p>
+            </div>
+            <div class="team-member">
+                <h3>Uranüs PortakalMandalinaSuyuAdam</h3>
+                <p>(Member)</p>
+            </div>
+        </div>
+
+        <h2>Leave a Comment</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Your comment here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
     <footer>
-        <p>&nbsp;</p>
+        <p>© 2024 Project Overview. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
