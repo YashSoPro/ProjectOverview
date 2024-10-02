@@ -1,82 +1,146 @@
-/* General Styles */
+/* Basic styling for the layout */
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333; /* Base color for text */
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header {
-  text-align: center;
+/* Styling for the tablist */
+.tablist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensures wrapping on mobile */
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+/* Tablist buttons in light mode */
+.tab-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-nav a {
-  color: var(--button-color);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.tab-buttons button,
+.tab-buttons .dropbtn {
+    background-color: #007BFF; /* Light mode blue */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-#projects .project,
-#team .team-list li {
-  margin-bottom: 20px;
+.tab-buttons .dropbtn {
+    padding-right: 30px;
 }
 
-#comment-form {
-  margin-top: 20px;
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+    .tablist {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tab-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
-input, textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+/* Dropdown styling */
+.dropdown {
+    position: relative;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: var(--button-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-/* Light Mode */
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --button-color: blue;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
 }
 
-/* Dark Mode */
-.dark-mode {
-  --bg-color: black;
-  --text-color: white;
-  --button-color: green;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-/* Team List Styling */
-.team-list {
-  list-style-type: none;
-  padding: 0;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-.team-list li {
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+body.dark-mode .main-content {
+    background-color: rgba(20, 20, 20, 0.95); /* Darker background */
+}
+
+body.dark-mode .tab-buttons button,
+body.dark-mode .dropbtn {
+    background-color: #007BFF; /* Keep buttons blue in dark mode */
+    color: white;
+}
+
+body.dark-mode .comment {
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+/* Comment section styling */
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#commentForm input,
+#commentForm textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#commentForm button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#commentList {
+    margin-top: 20px;
+}
+
+/* Add some animation for comments */
+.comment {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background for comments */
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.comment:hover {
+    background-color: rgba(200, 200, 200, 0.8); /* Highlight on hover */
 }
