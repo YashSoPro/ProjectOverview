@@ -1,214 +1,82 @@
-/* Basic styling for the layout */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #333; /* Base color for text */
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.main-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Styling for the tablist */
-.tablist {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    margin-bottom: 20px;
+header {
+  text-align: center;
 }
 
-.tab-buttons {
-    display: flex;
-    gap: 20px;
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-    display: inline-block;
+nav a {
+  color: var(--button-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+#projects .project,
+#team .team-list li {
+  margin-bottom: 20px;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+#comment-form {
+  margin-top: 20px;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+input, textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+button {
+  padding: 10px 20px;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+/* Light Mode */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --button-color: blue;
 }
 
-/* Discord button */
-.discord-btn {
-    background-color: #7289da;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+/* Dark Mode */
+.dark-mode {
+  --bg-color: black;
+  --text-color: white;
+  --button-color: green;
 }
 
-.discord-btn a {
-    color: white;
-    text-decoration: none;
+/* Team List Styling */
+.team-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* Toggle button */
-.toggle-btn {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text color */
-}
-
-body.dark-mode .main-content {
-    background-color: rgba(30, 30, 30, 0.9); /* Slightly transparent dark box */
-}
-
-body.dark-mode .dropbtn,
-body.dark-mode .discord-btn,
-body.dark-mode .toggle-btn,
-body.dark-mode .view-btn {
-    background-color: #4CAF50; /* Keep buttons the same color */
-    color: #ffffff; /* Light button text */
-}
-
-body.dark-mode .dropdown-content {
-    background-color: #2c2c2c; /* Dark dropdown background */
-}
-
-body.dark-mode .projects .project {
-    background-color: rgba(40, 40, 40, 0.8); /* Darker project background */
-}
-
-body.dark-mode #commentForm {
-    background-color: rgba(40, 40, 40, 0.8);
-    color: #ffffff;
-}
-
-body.dark-mode .comment {
-    background-color: rgba(50, 50, 50, 0.9);
-}
-
-/* Projects section */
-.projects .project {
-    margin-bottom: 20px;
-}
-
-.view-btn a {
-    color: white;
-    text-decoration: none;
-}
-
-.view-btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Team styling */
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.team-member {
-    display: inline-block;
-    text-align: center;
-    margin-right: 20px;
-}
-
-/* Tagline styling */
-.tagline {
-    text-align: center;
-    font-size: 1.5em;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.description {
-    text-align: center;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.big-quote {
-    font-size: 2.5em;
-    color: #007BFF;
-}
-
-/* Comment Section Styling */
-#commentForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#commentForm input,
-#commentForm textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#commentForm button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-#commentList {
-    margin-top: 20px;
+.team-list li {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
