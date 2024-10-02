@@ -2,27 +2,28 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
+    this.innerText = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
 });
 
-// Comment Form
+// Comment Submission
 const commentForm = document.getElementById('commentForm');
 const commentList = document.getElementById('commentList');
 
-commentForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    
-    const nameInput = document.getElementById('nameInput').value;
-    const commentInput = document.getElementById('commentInput').value;
+commentForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent page refresh
 
-    if (nameInput && commentInput) {
-        const commentElement = document.createElement('div');
-        commentElement.classList.add('comment', 'animate__animated', 'animate__fadeIn');
-        commentElement.innerHTML = `<strong>${nameInput}:</strong> ${commentInput}`;
-        
-        commentList.appendChild(commentElement);
-        
-        // Clear the form
-        document.getElementById('nameInput').value = '';
-        document.getElementById('commentInput').value = '';
-    }
+    const nameInput = document.getElementById('nameInput');
+    const commentText = commentForm.querySelector('textarea').value;
+
+    // Create a new comment element
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.innerHTML = `<strong>${nameInput.value}:</strong> ${commentText}`;
+
+    // Append the comment to the comment list
+    commentList.appendChild(commentDiv);
+
+    // Clear the form inputs
+    nameInput.value = '';
+    commentForm.querySelector('textarea').value = '';
 });
