@@ -1,146 +1,125 @@
-/* Basic styling for the layout */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #333; /* Base color for text */
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
 }
 
 .main-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for the tablist */
 .tablist {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Ensures wrapping on mobile */
 }
 
-/* Tablist buttons in light mode */
 .tab-buttons {
     display: flex;
     gap: 10px;
 }
 
-.tab-buttons button,
+.tab-buttons .toggle-btn,
+.tab-buttons .discord-btn,
 .tab-buttons .dropbtn {
-    background-color: #007BFF; /* Light mode blue */
-    color: white;
     padding: 10px;
-    border-radius: 5px;
     border: none;
-    cursor: pointer;
-}
-
-.tab-buttons .dropbtn {
-    padding-right: 30px;
-}
-
-/* Responsive fix for mobile */
-@media (max-width: 768px) {
-    .tablist {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .tab-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-mode .main-content {
-    background-color: rgba(20, 20, 20, 0.95); /* Darker background */
-}
-
-body.dark-mode .tab-buttons button,
-body.dark-mode .dropbtn {
-    background-color: #007BFF; /* Keep buttons blue in dark mode */
+    border-radius: 5px;
+    background-color: #3498db;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-body.dark-mode .comment {
-    background-color: rgba(50, 50, 50, 0.9);
+.tab-buttons .toggle-btn:hover,
+.tab-buttons .discord-btn:hover,
+.tab-buttons .dropbtn:hover {
+    background-color: #2980b9;
 }
 
-/* Comment section styling */
-#commentForm {
+.tagline {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.projects {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
-#commentForm input,
-#commentForm textarea {
+.project {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
     padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#commentForm button {
+button {
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
     border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
 }
 
 #commentList {
     margin-top: 20px;
 }
 
-/* Add some animation for comments */
 .comment {
-    margin: 5px 0;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Background for comments */
+    border: 1px solid #ccc;
+    margin: 5px 0;
     border-radius: 5px;
-    transition: background-color 0.3s; /* Smooth transition for background color */
-}
-
-.comment:hover {
-    background-color: rgba(200, 200, 200, 0.8); /* Highlight on hover */
 }
