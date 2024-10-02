@@ -39,32 +39,37 @@ commentForm.addEventListener('submit', function (event) {
     commentText.value = '';
 });
 
-// Animate projects on scroll
-const projects = document.querySelectorAll('.project');
-const observer = new IntersectionObserver((entries) => {
+// Smooth scrolling function
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Join Discord button
+document.getElementById('joinDiscord').addEventListener('click', function() {
+    // Replace 'YOUR_DISCORD_INVITE_LINK' with your actual Discord invite link
+    window.open('YOUR_DISCORD_INVITE_LINK', '_blank');
+});
+
+// Animate elements on scroll
+const animateOnScroll = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate__fadeIn');
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+};
 
-projects.forEach(project => {
-    observer.observe(project);
+const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.1 });
+
+document.querySelectorAll('.project, .team-member').forEach(el => {
+    observer.observe(el);
 });
 
-// Animate team members on scroll
-const teamMembers = document.querySelectorAll('.team-member');
-const teamObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate__fadeInLeft');
-            teamObserver.unobserve(entry.target);
-        }
+// View Project buttons
+document.querySelectorAll('.view-project').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('Project details coming soon!');
     });
-}, { threshold: 0.1 });
-
-teamMembers.forEach(member => {
-    teamObserver.observe(member);
 });
