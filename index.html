@@ -3,50 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Project Overview</title>
 </head>
 <body>
-    <div class="navbar">
-        <h1 style="text-align: center;">Project Overview</h1>
-        <div style="display: flex; justify-content: center; gap: 10px;">
-            <button id="projectListButton" onclick="toggleProjectList()">
-                <span class="bgContainer">
-                    <span>Projects</span>
-                </span>
-            </button>
-            <button id="discordButton" onclick="window.open('https://discord.gg/byAggyEXNA', '_blank')">
-                <span class="bgContainer">
-                    <span>Discord</span>
-                </span>
-            </button>
-            <button id="darkModeToggle">
-                <span class="bgContainer">
-                    <span>Dark Mode</span>
-                </span>
-            </button>
-        </div>
+    <div class="tablist">
+        <button onclick="toggleProjectList()">
+            <div class="bgContainer"><span>Projects</span></div>
+        </button>
+        <button id="discordButton" onclick="window.open('https://discord.gg/byAggyEXNA', '_blank')">
+            <div class="bgContainer"><span>Discord</span></div>
+        </button>
+        <button id="darkModeToggle">
+            <div class="bgContainer"><span>Dark Mode</span></div>
+        </button>
     </div>
 
-    <div class="project-list" id="projectList" style="display: none;">
+    <div id="projectList" style="display:none;">
+        <h2>Projects</h2>
         <ul>
             <li>
-                <h2>OpenIMG</h2>
-                <p>Work in progress, soon!</p>
-                <a href="https://github.com/YashSoPro/OpenIMG" target="_blank">View Project</a>
+                <a href="https://github.com/YashSoPro/emuinabox">EmuinaBox</a>
             </li>
             <li>
-                <h2>EmuinaBox</h2>
-                <p>Runs Windows x86 applications in Termux.</p>
-                <a href="https://github.com/YashSoPro/emuinabox" target="_blank">View Project</a>
+                <a href="https://github.com/YashSoPro/projectadd">ProjectAd</a>
             </li>
             <li>
-                <h2>ProjectAd</h2>
-                <p>Gateway to an immersive multimedia experience.</p>
-                <a href="https://github.com/YashSoPro/projectadd" target="_blank">View Project</a>
+                <a href="#">OpenIMG - Work in progress, coming soon!</a>
             </li>
         </ul>
     </div>
+
+    <div id="teamList" style="display:none;">
+        <h2>Team</h2>
+        <ul>
+            <li>SableMeow - Founder</li>
+            <li>Econome</li>
+            <li>Zephyx</li>
+            <li>Uranüs PortakalMandalinaSuyuAdam</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
