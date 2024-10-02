@@ -2,7 +2,7 @@ body {
     font-family: 'Courier New', Courier, monospace; /* Terminal font */
     margin: 0;
     padding: 0;
-    background: url('your-background-image-url.jpg') no-repeat center center fixed; /* Background image */
+    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed; /* Background image */
     background-size: cover; /* Make background cover full area */
 }
 
