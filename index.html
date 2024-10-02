@@ -5,120 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            background-image: url('https://i.imgur.com/4c54wh9.png');
-            background-size: cover;
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-        }
-
-        .main-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            font-size: 2em;
-        }
-
-        .tablist {
-            margin-bottom: 20px;
-        }
-
-        .tablist h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-
-        .tab-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .tab-buttons button {
-            padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .tab-buttons button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .big-quote {
-            font-size: 2.5em;
-            font-style: italic;
-            color: rgba(0, 0, 0, 0.7);
-        }
-
-        .tagline {
-            font-style: italic;
-            margin-top: 10px;
-            font-size: 1.3em;
-        }
-
-        .description {
-            margin-top: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 1.1em;
-        }
-
-        .projects, .team {
-            margin: 20px 0;
-        }
-
-        .project, .team-member {
-            margin-bottom: 20px;
-        }
-
-        .view-btn a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        .view-btn {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <div class="main-content">
@@ -138,7 +24,9 @@
                 </div>
 
                 <!-- Discord Server button -->
-                <button class="discord-btn"><a href="https://discord.gg/yourserverlink" target="_blank">Discord Server</a></button>
+                <button class="discord-btn">
+                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
+                </button>
 
                 <!-- Dark/Light Mode Toggle -->
                 <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
@@ -203,5 +91,6 @@
         </form>
         <div id="commentList"></div>
     </div>
+    <script src="script.js" defer></script>
 </body>
 </html>
