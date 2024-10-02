@@ -2,7 +2,7 @@ body {
     font-family: 'Courier New', Courier, monospace; /* Terminal font */
     margin: 0;
     padding: 0;
-    background: url('your-background-image-url.jpg') no-repeat center center fixed; /* Add your background image URL */
+    background: url('your-background-image-url.jpg') no-repeat center center fixed; /* Background image */
     background-size: cover; /* Make background cover full area */
 }
 
@@ -15,6 +15,13 @@ body {
     max-width: 800px; /* Limit the width */
     overflow: hidden; /* Prevent overflow */
     text-align: center; /* Center text in the main content */
+}
+
+.tablist {
+    background-color: rgba(255, 255, 255, 0.8); /* White semi-transparent background */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below tablist */
 }
 
 .project-overview {
@@ -30,7 +37,7 @@ body {
 }
 
 .big-quote {
-    font-size: 2.5rem; /* Larger size for quotation marks */
+    font-size: 2rem; /* Adjusted size for quotation marks */
     line-height: 1; /* Align quotation marks properly */
 }
 
@@ -136,24 +143,15 @@ button:hover {
     }
 
     .tagline {
-        font-size: 18px; /* Adjust size for mobile */
+        font-size: 18px; /* Adjust size for tagline on mobile */
     }
 
     .description {
-        font-size: 16px; /* Adjust size for mobile */
-    }
-
-    .project {
-        flex-direction: column; /* Stack content on mobile */
-        align-items: center; /* Center items */
-    }
-
-    .team-member {
-        flex-direction: column; /* Stack team members on mobile */
+        font-size: 16px; /* Adjust size for description on mobile */
     }
 
     .team-member img {
-        width: 60px; /* Smaller size for mobile */
-        height: 60px; /* Smaller size for mobile */
+        width: 50px; /* Smaller size for mobile */
+        height: 50px; /* Smaller size for mobile */
     }
 }
