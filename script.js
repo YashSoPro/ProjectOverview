@@ -1,18 +1,19 @@
-document.getElementById('commentForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
+// Dark mode toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
 
-    const nameInput = document.getElementById('nameInput');
-    const commentInput = document.querySelector('textarea'); // Select the textarea
+// Store dark mode preference
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+}
 
-    // Create a new comment
-    const newComment = document.createElement('div');
-    newComment.textContent = `${nameInput.value}: ${commentInput.value}`; // Format as "name: comment"
-    newComment.classList.add('comment'); // Optional: Add a class for styling
-
-    // Add the comment to the comment list
-    document.getElementById('commentList').appendChild(newComment);
-
-    // Clear the inputs
-    nameInput.value = '';
-    commentInput.value = '';
+darkModeToggle.addEventListener('click', () => {
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.removeItem('theme');
+    }
 });
