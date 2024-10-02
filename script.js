@@ -47,7 +47,6 @@ function scrollToSection(sectionId) {
 
 // Join Discord button
 document.getElementById('joinDiscord').addEventListener('click', function() {
-    // Replace 'YOUR_DISCORD_INVITE_LINK' with your actual Discord invite link
     window.open('YOUR_DISCORD_INVITE_LINK', '_blank');
 });
 
