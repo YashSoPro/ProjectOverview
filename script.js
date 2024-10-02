@@ -12,17 +12,17 @@ commentForm.addEventListener('submit', function (e) {
     e.preventDefault();
     
     const nameInput = document.getElementById('nameInput').value;
-    const commentInput = document.querySelector('textarea').value;
+    const commentInput = document.getElementById('commentInput').value;
 
     if (nameInput && commentInput) {
         const commentElement = document.createElement('div');
-        commentElement.classList.add('comment');
+        commentElement.classList.add('comment', 'animate__animated', 'animate__fadeIn');
         commentElement.innerHTML = `<strong>${nameInput}:</strong> ${commentInput}`;
         
         commentList.appendChild(commentElement);
         
         // Clear the form
         document.getElementById('nameInput').value = '';
-        document.querySelector('textarea').value = '';
+        document.getElementById('commentInput').value = '';
     }
 });
