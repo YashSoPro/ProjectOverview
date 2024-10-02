@@ -1,14 +1,13 @@
-// Include Animate.css
-const commentForm = document.getElementById('commentForm');
-const commentList = document.getElementById('commentList');
-const darkModeToggle = document.getElementById('darkModeToggle');
-
 // Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 });
 
-// Comment Form Submission
+// Comment Form
+const commentForm = document.getElementById('commentForm');
+const commentList = document.getElementById('commentList');
+
 commentForm.addEventListener('submit', function (e) {
     e.preventDefault();
     
@@ -17,7 +16,7 @@ commentForm.addEventListener('submit', function (e) {
 
     if (nameInput && commentInput) {
         const commentElement = document.createElement('div');
-        commentElement.classList.add('comment', 'animate__animated', 'animate__fadeIn'); // Add Animate.css classes
+        commentElement.classList.add('comment');
         commentElement.innerHTML = `<strong>${nameInput}:</strong> ${commentInput}`;
         
         commentList.appendChild(commentElement);
