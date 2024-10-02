@@ -1,3 +1,6 @@
+ Updated HTML File (index.html)
+html
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,59 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="main-content">
-        <!-- Tablist with three buttons -->
         <div class="tablist">
-            <h2>Project Overview</h2>
             <div class="tab-buttons">
-                <!-- Dropdown for projects -->
+                <button onclick="showProjects()">GitShowcase</button>
                 <div class="dropdown">
-                    <button class="dropbtn">Projects <i class="fas fa-caret-down"></i></button>
+                    <button class="dropbtn">More</button>
                     <div class="dropdown-content">
-                        <a href="#">OpenIMG</a>
-                        <a href="#">ProjectAd</a>
-                        <a href="#">EmuinaBox</a>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
                     </div>
                 </div>
-
-                <!-- Discord Server button -->
-                <button class="discord-btn">
-                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
-                </button>
-
-                <!-- Dark/Light Mode Toggle -->
-                <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
+                <button id="darkModeToggle">Toggle Dark Mode</button>
             </div>
         </div>
 
-        <!-- Tagline and description -->
-        <p class="tagline"><span class="big-quote">“</span>We turn your ideas into reality<span class="big-quote">”</span></p>
-        <p class="description"><b>This page showcases our projects and team members. Explore and see what we have been working on!</b></p>
-
-        <!-- Projects section -->
         <div class="projects">
             <div class="project">
-                <h3>GitShowcase: OpenIMG</h3>
-                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
-                <button class="view-btn"><a href="#">View</a></button>
+                <h3>OpenIMG</h3>
+                <p>A work in progress where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
             </div>
             <div class="project">
-                <h3>GitShowcase: ProjectAd</h3>
-                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
-                <button class="view-btn"><a href="#">View</a></button>
+                <h3>ProjectAd</h3>
+                <p>A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
             </div>
             <div class="project">
-                <h3>GitShowcase: EmuinaBox</h3>
-                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
-                <button class="view-btn"><a href="#">View</a></button>
+                <h3>EmuinaBox</h3>
+                <p>Run Windows x86 applications on Termux using Box64 and Wine.</p>
             </div>
         </div>
 
-        <!-- Team section -->
-        <h2>Our Team</h2>
+        <h2>Team</h2>
         <div class="team">
             <div class="team-member">
                 <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
@@ -86,6 +70,216 @@
         </form>
         <div id="commentList"></div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> <!-- Link to the external JavaScript file -->
 </body>
 </html>
+2. Updated CSS File (styles.css)
+css
+Copy code
+/* Basic styling for the layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333; /* Base color for text */
+}
+
+.main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the tablist */
+.tablist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensures wrapping on mobile */
+}
+
+/* Tablist buttons in light mode */
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-buttons button, .tab-buttons .dropbtn {
+    background-color: #007BFF; /* Light mode blue */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tab-buttons .dropbtn {
+    padding-right: 30px;
+}
+
+/* Button hover effects */
+.tab-buttons button:hover, .tab-buttons .dropbtn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+    .tablist {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tab-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .main-content {
+    background-color: rgba(20, 20, 20, 0.95); /* Darker background */
+}
+
+body.dark-mode .tab-buttons button, body.dark-mode .dropbtn {
+    background-color: #007BFF; /* Keep buttons blue in dark mode */
+    color: white;
+}
+
+body.dark-mode .comment {
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+/* Comment section styling */
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#commentForm input, #commentForm textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#commentForm button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add animations for the projects */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+#commentList {
+    margin-top: 20px;
+}
+
+/* Team section */
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-member .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+3. Updated JavaScript File (script.js)
+javascript
+Copy code
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode'); // Toggle the dark-mode class on the body
+    this.innerText = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode'; // Change button text based on mode
+});
+
+// Comment Submission
+const commentForm = document.getElementById('commentForm');
+const commentList = document.getElementById('commentList');
+
+commentForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent page refresh
+
+    const nameInput = document.getElementById('nameInput');
+    const commentText = commentForm.querySelector('textarea').value;
+
+    // Create a new comment element
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.innerHTML = `<strong>${nameInput.value}:</strong> ${commentText}`;
+
+    // Append the comment to the list
+    commentList.appendChild(commentDiv);
+
+    // Clear the form
+    nameInput.value = '';
+    commentForm.querySelector('textarea').value = '';
+});
