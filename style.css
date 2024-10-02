@@ -1,157 +1,178 @@
+/* Basic styling for the layout */
 body {
-    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed; /* Background image */
-    background-size: cover; /* Make background cover full area */
+    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
+    border-radius: 10px;
+}
+
+/* Styling for the tablist */
+.tablist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 800px; /* Limit the width */
-    overflow: hidden; /* Prevent overflow */
-    text-align: center; /* Center text in the main content */
+    margin-bottom: 20px;
 }
 
-.tablist {
-    background-color: rgba(255, 255, 255, 0.8); /* White semi-transparent background */
-    padding: 15px;
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 20px; /* Space below tablist */
-}
-
-.project-overview {
-    font-size: 24px; /* Size for the Project Overview title */
-    margin-bottom: 10px; /* Space below the title */
-    font-weight: bold; /* Bold for the title */
-}
-
-.tagline {
-    font-style: italic; /* Italic for the tagline */
-    margin: 10px 0; /* Margin around the tagline */
-    font-size: 1.5rem; /* Adjust the size of the tagline */
-}
-
-.big-quote {
-    font-size: 2rem; /* Adjusted size for quotation marks */
-    line-height: 1; /* Align quotation marks properly */
-}
-
-.description {
-    font-weight: bold; /* Bold for the description */
-    margin: 10px 0; /* Margin around the description */
-}
-
-.projects {
+.tab-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between project items */
+    gap: 20px;
 }
 
-.project {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s; /* Add a small animation */
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.project:hover {
-    transform: scale(1.02); /* Slightly scale up on hover */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.view-button {
-    background-color: #007bff; /* Button color */
-    color: white; /* Button text color */
-    padding: 10px 15px; /* Button padding */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
-    text-decoration: none; /* No underline */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.view-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-.team {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between team items */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Discord button */
+.discord-btn {
+    background-color: #7289da;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.discord-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Toggle button */
+.toggle-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Projects section */
+.projects .project {
+    margin-bottom: 20px;
+}
+
+.view-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.view-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Team styling */
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .team-member {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
 }
 
-.team-member img {
-    width: 80px; /* Set a fixed size for team member images */
-    height: 80px; /* Set a fixed size for team member images */
-    border-radius: 50%; /* Circular images */
-    margin-right: 10px; /* Space between image and name */
+/* Tagline styling */
+.tagline {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
-form {
-    margin: 20px 0; /* Margin around the form */
+.description {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-input[type="text"],
-textarea {
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding inside the fields */
-    margin: 10px 0; /* Margin around the fields */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 5px; /* Rounded corners */
+.big-quote {
+    font-size: 2em;
+    font-weight: bold;
 }
 
-button {
-    background-color: #007bff; /* Button color */
-    color: white; /* Button text color */
-    padding: 10px 15px; /* Button padding */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-#commentList {
-    margin-top: 20px; /* Space above comment list */
-}
-
+/* Center the content on mobile and desktop */
 @media (max-width: 768px) {
     .main-content {
+        width: 95%;
+        margin: 10px auto;
         padding: 15px;
-        margin: 10px; /* Adjust margin for mobile */
-        max-width: 100%; /* Full width on mobile */
     }
 
-    .project-overview {
-        font-size: 20px; /* Adjust font size for mobile */
+    .tablist, .team-member, .projects {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .tagline {
-        font-size: 18px; /* Adjust size for tagline on mobile */
+    .team-member img, .view-btn {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
-    .description {
-        font-size: 16px; /* Adjust size for description on mobile */
+    .team-member p {
+        word-wrap: break-word;
     }
 
-    .team-member img {
-        width: 50px; /* Smaller size for mobile */
-        height: 50px; /* Smaller size for mobile */
+    .tab-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
