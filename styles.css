@@ -141,20 +141,9 @@ body.dark-mode input {
 /* Projects section */
 .projects .project {
     margin-bottom: 20px;
-}
-
-.view-btn a {
-    color: white;
-    text-decoration: none;
-}
-
-.view-btn {
-    background-color: #007BFF;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for projects */
     padding: 10px;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 /* Team styling */
@@ -169,12 +158,6 @@ body.dark-mode input {
     display: inline-block;
     text-align: center;
     margin-right: 20px;
-}
-
-/* Tagline styling */
-.tagline {
-    text-align: center;
-    font-size: 1.5em;
 }
 
 /* Comment section styling */
@@ -202,4 +185,22 @@ body.dark-mode input {
 
 #commentList {
     margin-top: 20px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .tablist {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tab-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
