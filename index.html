@@ -1,73 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Overview</title>
-  <!-- Animate.css -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>We turn your ideas into reality</h1>
-      <nav class="tablist">
-        <a href="#">Projects</a>
-        <a href="#">Discord</a>
-        <a href="#" id="dark-mode-toggle">Dark Mode</a>
-      </nav>
-    </header>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="animate__animated animate__fadeIn">
-      <h2>Projects</h2>
-      <div class="project animate__animated animate__bounce">
-        <h3>OpenIMG</h3>
-        <p>An open-source platform for sharing and voting on photography, with a weekly leaderboard feature.</p>
-      </div>
-      <div class="project animate__animated animate__bounce">
-        <h3>EmuinaBox</h3>
-        <p>A project designed to run Windows x86 applications in Termux using Box64 and Wine.</p>
-      </div>
-      <div class="project animate__animated animate__bounce">
-        <h3>ProjectAd</h3>
-        <p>A multimedia gateway with a vast library, dynamic search, and personalized recommendations.</p>
-      </div>
-    </section>
+    <div class="main-content animate__animated animate__fadeIn">
+        <!-- Tablist with three buttons -->
+        <div class="tablist">
+            <h2>Project Overview</h2>
+            <div class="tab-buttons">
+                <!-- Dropdown for projects -->
+                <div class="dropdown">
+                    <button class="dropbtn">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="#">OpenIMG</a>
+                        <a href="#">ProjectAd</a>
+                        <a href="#">EmuinaBox</a>
+                    </div>
+                </div>
 
-    <!-- Team List Section -->
-    <section id="team" class="animate__animated animate__fadeInUp">
-      <h2>Our Team</h2>
-      <ul class="team-list animate__animated animate__fadeIn">
-        <li class="animate__animated animate__fadeInLeft">SableMeow (Founder)</li>
-        <li class="animate__animated animate__fadeInLeft">Econome</li>
-        <li class="animate__animated animate__fadeInLeft">Zephyx</li>
-        <li class="animate__animated animate__fadeInLeft">Uranüs PortakalMandalinaSuyuAdam</li>
-      </ul>
-    </section>
+                <!-- Discord Server button -->
+                <button class="discord-btn">
+                    <a href="https://discord.gg/byAggyEXNA" target="_blank">Discord Server</a>
+                </button>
 
-    <!-- Comments Section -->
-    <section id="comments" class="animate__animated animate__fadeIn">
-      <h2>Leave a Comment</h2>
-      <form id="comment-form">
-        <input type="text" id="name" placeholder="Your Name">
-        <textarea id="comment" placeholder="Your Comment"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <div id="comment-list"></div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Your Team</p>
-    </footer>
-  </div>
+                <!-- Dark/Light Mode Toggle -->
+                <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
+            </div>
+        </div>
 
-  <script src="script.js"></script>
+        <!-- Tagline and description -->
+        <p class="tagline"><span class="big-quote">“</span>We turn your ideas into reality<span class="big-quote">”</span></p>
+        <p class="description"><b>This page showcases our projects and team members. Explore and see what we have been working on!</b></p>
+
+        <!-- Projects section -->
+        <div class="projects">
+            <div class="project animate__animated animate__fadeInUp">
+                <h3>OpenIMG</h3>
+                <p>This project allows users to share their photography and vote on images, with a leaderboard showcasing the best images weekly.</p>
+                <button class="view-btn"><a href="#">View</a></button>
+            </div>
+            <div class="project animate__animated animate__fadeInUp">
+                <h3>ProjectAd</h3>
+                <p>A gateway to an immersive multimedia experience featuring a vast library, user-friendly interface, and personalization.</p>
+                <button class="view-btn"><a href="#">View</a></button>
+            </div>
+            <div class="project animate__animated animate__fadeInUp">
+                <h3>EmuinaBox</h3>
+                <p>This project runs Windows x86 applications in Termux using Box64 and Wine.</p>
+                <button class="view-btn"><a href="#">View</a></button>
+            </div>
+        </div>
+
+        <!-- Team section -->
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="team-member animate__animated animate__fadeInLeft">
+                <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
+                <p>SableMeow (Founder)</p>
+            </div>
+            <div class="team-member animate__animated animate__fadeInLeft">
+                <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
+                <p>Econome (Member)</p>
+            </div>
+            <div class="team-member animate__animated animate__fadeInLeft">
+                <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
+                <p>Zephyx (Member)</p>
+            </div>
+            <div class="team-member animate__animated animate__fadeInLeft">
+                <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
+                <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
+            </div>
+        </div>
+
+        <!-- Comment section -->
+        <h2>Leave a Comment</h2>
+        <form id="commentForm" class="animate__animated animate__fadeInUp">
+            <input type="text" id="nameInput" placeholder="Your Name" required>
+            <textarea placeholder="Your comment here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="commentList"></div>
+    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>
