@@ -29,10 +29,6 @@ body {
     margin-bottom: 20px;
 }
 
-.tab-title {
-    color: #333; /* Color for title text */
-}
-
 .tab-buttons {
     display: flex;
     gap: 20px;
@@ -116,12 +112,8 @@ body.dark-mode .dropbtn,
 body.dark-mode .discord-btn,
 body.dark-mode .toggle-btn,
 body.dark-mode .view-btn {
-    background-color: #1f1f1f; /* Dark button background */
+    background-color: #4CAF50; /* Keep buttons the same color */
     color: #ffffff; /* Light button text */
-}
-
-body.dark-mode .tab-title {
-    color: #ffffff; /* Light title text in dark mode */
 }
 
 body.dark-mode .dropdown-content {
@@ -132,18 +124,32 @@ body.dark-mode .projects .project {
     background-color: rgba(40, 40, 40, 0.8); /* Darker project background */
 }
 
-body.dark-mode textarea,
-body.dark-mode input {
-    background-color: #1f1f1f; /* Dark background for inputs */
-    color: #ffffff; /* Light text color */
+body.dark-mode #commentForm {
+    background-color: rgba(40, 40, 40, 0.8);
+    color: #ffffff;
+}
+
+body.dark-mode .comment {
+    background-color: rgba(50, 50, 50, 0.9);
 }
 
 /* Projects section */
 .projects .project {
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Light background for projects */
+}
+
+.view-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.view-btn {
+    background-color: #007BFF;
+    color: white;
     padding: 10px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Team styling */
@@ -160,47 +166,49 @@ body.dark-mode input {
     margin-right: 20px;
 }
 
-/* Comment section styling */
+/* Tagline styling */
+.tagline {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.big-quote {
+    font-size: 2.5em;
+    color: #007BFF;
+}
+
+/* Comment Section Styling */
 #commentForm {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #commentForm input,
 #commentForm textarea {
-    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 #commentForm button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
     padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
 }
 
 #commentList {
     margin-top: 20px;
-}
-
-/* Responsive styles for mobile */
-@media (max-width: 768px) {
-    .tablist {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .tab-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .tab-buttons button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
 }
