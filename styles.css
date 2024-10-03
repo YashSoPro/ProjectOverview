@@ -90,7 +90,11 @@ body {
     background-color: #4752C4; /* Darker Discord color */
 }
 
-.dark .nav-button, .dark .view-project-btn, .dark .submit-btn, .dark .join-discord-btn {
+/* Dark Mode Styles */
+.dark .nav-button, 
+.dark .view-project-btn, 
+.dark .submit-btn, 
+.dark .join-discord-btn {
     background-color: #1f2937; /* Gray-800 */
     color: white;
 }
