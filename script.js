@@ -1,76 +1,45 @@
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+document.addEventListener('DOMContentLoaded', () => {
+    // Links to the projects
+    document.getElementById('openimgLink').setAttribute('href', 'https://github.com/YashSoPro/OpenIMG');
+    document.getElementById('projectadLink').setAttribute('href', 'https://github.com/YashSoPro/projectadd');
+    document.getElementById('emuinaboxLink').setAttribute('href', 'https://github.com/YashSoPro/emuinabox');
 
-function setDarkMode(isDark) {
-    document.body.classList.toggle('dark-mode', isDark);
-    darkModeToggle.innerText = isDark ? 'Light Mode' : 'Dark Mode';
-    localStorage.setItem('darkMode', isDark);
-}
+    // Discord link
+    document.getElementById('joinDiscord').setAttribute('href', 'https://discord.gg/byAggyEXNA');
 
-// Check for saved user preference, otherwise use system preference
-const savedDarkMode = localStorage.getItem('darkMode');
-setDarkMode(savedDarkMode !== null ? savedDarkMode === 'true' : prefersDarkScheme.matches);
-
-darkModeToggle.addEventListener('click', () => setDarkMode(!document.body.classList.contains('dark-mode')));
-
-// Comment Submission
-const commentForm = document.getElementById('commentForm');
-const commentList = document.getElementById('commentList');
-
-commentForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const nameInput = document.getElementById('nameInput');
-    const commentText = document.getElementById('commentText');
-
-    if (nameInput.value.trim() === '' || commentText.value.trim() === '') {
-        alert('Please fill in both name and comment fields.');
-        return;
-    }
-
-    const commentDiv = document.createElement('div');
-    commentDiv.classList.add('comment', 'animate__animated', 'animate__fadeIn');
-    commentDiv.innerHTML = `<strong>${nameInput.value}:</strong> ${commentText.value}`;
-
-    commentList.insertBefore(commentDiv, commentList.firstChild);
-
-    nameInput.value = '';
-    commentText.value = '';
-});
-
-// Smooth scrolling function
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Join Discord button
-document.getElementById('joinDiscord').addEventListener('click', function() {
-    window.open('YOUR_DISCORD_INVITE_LINK', '_blank');
-});
-
-// Animate elements on scroll
-const animateOnScroll = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate__fadeIn');
-            observer.unobserve(entry.target);
-        }
+    // Toggle dark mode
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
     });
-};
 
-// Observe sections for scroll animations
-const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.1 });
+    // Scroll to section function
+    window.scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-// Observe each project, team member, tagline, and heading for animations
-document.querySelectorAll('.project, .team-member, .tagline, h2').forEach(el => {
-    observer.observe(el);
-});
+    // Comment form submission
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
 
-// View Project buttons
-document.querySelectorAll('.view-project').forEach(button => {
-    button.addEventListener('click', function() {
-        alert('Project details coming soon!');
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('nameInput').value;
+        const comment = document.getElementById('commentText').value;
+
+        if (name && comment) {
+            const newComment = document.createElement('div');
+            newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
+            newComment.classList.add('mb-4', 'p-2', 'border', 'rounded');
+
+            commentList.appendChild(newComment);
+
+            // Reset the form
+            commentForm.reset();
+        }
     });
 });
