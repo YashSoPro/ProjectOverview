@@ -99,6 +99,13 @@ body {
     transform: translateY(-2px);
 }
 
+/* Form inputs */
+input, textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
 /* Animation classes */
 @keyframes fadeInUp {
     from {
