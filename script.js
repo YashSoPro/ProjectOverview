@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Links to the projects
     document.getElementById('openimgLink').setAttribute('href', 'https://github.com/YashSoPro/OpenIMG');
-    document.getElementById('projectadLink').setAttribute('href', 'https://github.com/YashSoPro/projectadd');
+    document.getElementById('projectadLink').setAttribute('href', 'https://github.com/YashSoPro/projectad');
     document.getElementById('emuinaboxLink').setAttribute('href', 'https://github.com/YashSoPro/emuinabox');
 
     // Discord link
-    document.getElementById('joinDiscord').setAttribute('href', 'https://discord.gg/byAggyEXNA');
+    document.getElementById('joinDiscord').setAttribute('href', 'https://discord.com/invite/6quw5YTRnf');
 
     // Toggle dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -21,6 +21,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // List of abusive keywords
+    const abusiveKeywords = [
+        'abuse',
+        'bastard',
+        'bitch',
+        'bullshit',
+        'cunt',
+        'dick',
+        'douche',
+        'fag',
+        'fuck',
+        'idiot',
+        'jerk',
+        'klutz',
+        'moron',
+        'nigga',
+        'nigger',
+        'piss',
+        'prick',
+        'pussy',
+        'shit',
+        'slut',
+        'twat',
+        'whore',
+        'wanker',
+        'retard',
+        'cocksucker',
+        'motherfucker',
+        'asshole',
+        'faggot',
+        'freak',
+        'loser',
+        'scum',
+        'skank',
+        'troll'
+    ];
+
     // Comment form submission
     const commentForm = document.getElementById('commentForm');
     const commentList = document.getElementById('commentList');
@@ -30,6 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const name = document.getElementById('nameInput').value;
         const comment = document.getElementById('commentText').value;
+
+        // Check for abusive comments
+        const containsAbusiveWords = abusiveKeywords.some((word) => comment.toLowerCase().includes(word));
+
+        if (containsAbusiveWords) {
+            alert('Your comment contains inappropriate language. Please revise it.');
+            return;
+        }
 
         if (name && comment) {
             const newComment = document.createElement('div');
