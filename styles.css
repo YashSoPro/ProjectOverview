@@ -1,74 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+/* General body styling */
 body {
-    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #2b2b2b, #1b1b1b); /* Gradient background */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+body.dark {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    color: #f5f5f5;
+}
+
+/* Navbar button styling */
 .nav-button {
-    @apply px-4 py-2 mx-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300;
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px; /* Pill-shaped buttons */
+    transition: all 0.3s ease-in-out;
 }
 
-.section-title {
-    @apply text-3xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400;
+.nav-button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05); /* Slight scaling on hover */
 }
 
-.project-card {
-    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105;
-}
-
-.view-project-btn {
-    @apply mt-4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300;
-}
-
-.team-member {
-    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transition-transform duration-300 hover:transform hover:scale-105;
-}
-
-.submit-btn {
-    @apply w-full px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300;
-}
-
-.join-discord-btn {
-    @apply px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300;
-}
-
-/* Custom background with overlay */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Input field styling */
+.input-field {
     width: 100%;
-    height: 100%;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #ffffff10;
+    color: #fff;
 }
 
-/* Ensure dark mode changes the overlay opacity */
-.dark body::before {
-    opacity: 0.05;
+/* Submit button */
+.submit-btn {
+    background-color: #10b981;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Add some custom animations */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+.submit-btn:hover {
+    background-color: #059669;
+    transform: scale(1.05);
 }
 
-.project-card:hover {
-    animation: float 3s ease-in-out infinite;
+/* Comment list */
+#commentList div {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-    .nav-button {
-        @apply px-2 py-1 mx-1 text-sm;
-    }
+/* Dark mode styles */
+body.dark .nav-button {
+    background-color: #4b5563;
+}
 
-    .section-title {
-        @apply text-2xl;
-    }
+body.dark .submit-btn {
+    background-color: #6ee7b7;
+}
+
+body.dark .input-field {
+    background-color: #1f2937;
+    color: white;
+}
+
+body.dark #commentList div {
+    border-color: #555;
+}
+
+/* Hover effects for cards */
+.project-card:hover, .team-member:hover {
+    transform: scale(1.08);
+    transition: transform 0.3s ease-in-out;
 }
