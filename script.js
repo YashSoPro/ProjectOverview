@@ -1,5 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (previous code remains the same)
+    // Links to the projects
+    document.getElementById('openimgLink').setAttribute('href', 'https://github.com/YashSoPro/OpenIMG');
+    document.getElementById('projectadLink').setAttribute('href', 'https://github.com/YashSoPro/projectad');
+    document.getElementById('emuinaboxLink').setAttribute('href', 'https://github.com/YashSoPro/emuinabox');
+    // Discord link
+    document.getElementById('joinDiscord').setAttribute('href', 'https://discord.com/invite/6quw5YTRnf');
+
+    // Anime.js animations
+    const tagline = document.getElementById('tagline');
+    anime({
+        targets: tagline,
+        opacity: [0, 1],
+        translateY: [50, 0],
+        duration: 1500,
+        easing: 'easeOutExpo'
+    });
+
+    anime({
+        targets: '.project-card',
+        opacity: [0, 1],
+        translateY: [50, 0],
+        delay: anime.stagger(200),
+        duration: 1000,
+        easing: 'easeOutQuad'
+    });
+
+    anime({
+        targets: '.team-member',
+        scale: [0.9, 1],
+        opacity: [0, 1],
+        delay: anime.stagger(150),
+        duration: 800,
+        easing: 'easeOutSine'
+    });
 
     // Toggle dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -31,5 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
         setColorScheme(!html.classList.contains('dark'));
     });
 
-    // ... (rest of the code remains the same)
-});
+    // Listen for system color scheme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('darkMode') === null) {
+            setColorScheme(e.matches);
+        }
+    });
+
+    // Scroll to section function
+    window.scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            anime({
+                targets: document.documentElement,
+                scrollTop: section.offsetTop,
+                duration: 800,
+                easing: '
