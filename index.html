@@ -3,113 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHSOpro Projects</title>
+    <title>Our Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/css/ionicons.min.css">
 </head>
-<body>
-    <div class="main-content">
-        <div class="tablist animate__animated animate__fadeIn">
-            <div class="tab-buttons">
-                <button type="button" onclick="scrollToSection('projects')">Projects</button>
-                <button type="button" onclick="scrollToSection('team')">Team</button>
-                <button type="button" onclick="scrollToSection('comments')">Comments</button>
-                <button type="button" id="darkModeToggle">Toggle Dark Mode</button>
-            </div>
-        </div>
-
-        <div class="tagline animate__animated animate__fadeIn">
-            <i class="icon ion-quote-left"></i>
-            <h2>We make your ideas into reality.</h2>
-            <i class="icon ion-quote-right"></i>
-        </div>
-
-        <div id="projects" class="projects">
-            <div class="project animate__animated animate__fadeIn">
-                <h3>OpenIMG</h3>
-                <p>A work in progress where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
-                <button class="button view-project">
-                    <div class="bgContainer">
-                        <span>View Project</span>
-                    </div>
-                    <div class="arrowContainer">
-                        <i class="icon ion-arrow-right-c"></i>
-                    </div>
-                </button>
-            </div>
-            <div class="project animate__animated animate__fadeIn">
-                <h3>ProjectAd</h3>
-                <p>A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
-                <button class="button view-project">
-                    <div class="bgContainer">
-                        <span>View Project</span>
-                    </div>
-                    <div class="arrowContainer">
-                        <i class="icon ion-arrow-right-c"></i>
-                    </div>
-                </button>
-            </div>
-            <div class="project animate__animated animate__fadeIn">
-                <h3>EmuinaBox</h3>
-                <p>Run Windows x86 applications on Termux using Box64 and Wine.</p>
-                <button class="button view-project">
-                    <div class="bgContainer">
-                        <span>View Project</span>
-                    </div>
-                    <div class="arrowContainer">
-                        <i class="icon ion-arrow-right-c"></i>
-                    </div>
-                </button>
-            </div>
-        </div>
-
-        <h2 id="team" class="section-title animate__animated animate__fadeIn">Team</h2>
-        <div class="team">
-            <div class="team-member animate__animated animate__fadeIn">
-                <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow">
-                <p>SableMeow (Founder)</p>
-            </div>
-            <div class="team-member animate__animated animate__fadeIn">
-                <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome">
-                <p>Econome (Member)</p>
-            </div>
-            <div class="team-member animate__animated animate__fadeIn">
-                <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx">
-                <p>Zephyx (Member)</p>
-            </div>
-            <div class="team-member animate__animated animate__fadeIn">
-                <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam">
-                <p>Uranüs PortakalMandalinaSuyuAdam (Member)</p>
-            </div>
-        </div>
-
-        <h2 id="comments" class="section-title animate__animated animate__fadeIn">Leave a Comment</h2>
-        <form id="commentForm">
-            <input type="text" id="nameInput" placeholder="Your Name" required>
-            <textarea id="commentText" placeholder="Your comment here..." required></textarea>
-            <button type="submit" class="button">
-                <div class="bgContainer">
-                    <span>Submit</span>
-                </div>
-                <div class="arrowContainer">
-                    <i class="icon ion-paper-airplane"></i>
-                </div>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4 py-8">
+        <nav class="flex justify-center mb-8">
+            <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
+            <button onclick="scrollToSection('team')" class="nav-button">Team</button>
+            <button onclick="scrollToSection('comments')" class="nav-button">Comments</button>
+            <button id="darkModeToggle" class="nav-button">
+                <i class="fas fa-moon dark:fas fa-sun"></i>
             </button>
-        </form>
-        <div id="commentList" class="animate__animated animate__fadeIn"></div>
+        </nav>
 
-        <div class="discord-join animate__animated animate__fadeIn">
-            <button id="joinDiscord" class="button">
-                <div class="bgContainer">
-                    <span>Join Our Discord</span>
+        <div id="tagline" class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <i class="fas fa-quote-left mr-2"></i>
+                We make your ideas into reality.
+                <i class="fas fa-quote-right ml-2"></i>
+            </h1>
+        </div>
+
+        <section id="projects" class="mb-12">
+            <h2 class="section-title">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">OpenIMG</h3>
+                    <p class="mb-4">[WIP] A site where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
+                    <a id="openimgLink" class="view-project-btn">
+                        View Project
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-                <div class="arrowContainer">
-                    <i class="icon ion-social-discord"></i>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">ProjectAd</h3>
+                    <p class="mb-4">A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
+                    <a id="projectadLink" class="view-project-btn">
+                        View Project
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-            </button>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">EmuinaBox</h3>
+                    <p class="mb-4">Run Windows x86 applications on Termux using Box64 and Wine.</p>
+                    <a id="emuinaboxLink" class="view-project-btn">
+                        View Project
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="mb-12">
+            <h2 class="section-title">Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="team-member">
+                    <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <p class="font-semibold">SableMeow (Founder)</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <p class="font-semibold">Econome (Creator)</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <p class="font-semibold">Zephyx (Creator)</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <p class="font-semibold">Uranüs PortakalMandalinaSuyuAdam (Creator)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments" class="mb-12">
+            <h2 class="section-title">Comments</h2>
+            <form id="commentForm" class="mb-8">
+                <input type="text" id="nameInput" placeholder="Your Name" required class="w-full mb-4 p-2 border rounded">
+                <textarea id="commentText" placeholder="Your comment here..." required class="w-full mb-4 p-2 border rounded"></textarea>
+                <button type="submit" class="submit-btn">
+                    Submit
+                    <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+            <div id="commentList"></div>
+        </section>
+
+        <div class="text-center">
+            <a id="joinDiscord" class="join-discord-btn">
+                Join Our Discord
+                <i class="fab fa-discord ml-2"></i>
+            </a>
         </div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
