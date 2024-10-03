@@ -1,74 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 body {
-    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
 .nav-button {
-    @apply px-4 py-2 mx-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300;
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #2563eb; /* Blue-600 */
 }
 
 .section-title {
-    @apply text-3xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e3a8a; /* Blue-800 */
 }
 
 .project-card {
-    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105;
-}
-
-.view-project-btn {
-    @apply mt-4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300;
-}
-
-.team-member {
-    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center transition-transform duration-300 hover:transform hover:scale-105;
-}
-
-.submit-btn {
-    @apply w-full px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300;
-}
-
-.join-discord-btn {
-    @apply px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300;
-}
-
-/* Custom background with overlay */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://i.imgur.com/4c54wh9.png') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
-}
-
-/* Ensure dark mode changes the overlay opacity */
-.dark body::before {
-    opacity: 0.05;
-}
-
-/* Add some custom animations */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
 .project-card:hover {
-    animation: float 3s ease-in-out infinite;
+    transform: scale(1.05);
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-    .nav-button {
-        @apply px-2 py-1 mx-1 text-sm;
-    }
+.view-project-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-    .section-title {
-        @apply text-2xl;
-    }
+.view-project-btn:hover {
+    background-color: #2563eb; /* Blue-600 */
+}
+
+.team-member {
+    text-align: center;
+}
+
+.comment {
+    border-bottom: 1px solid #e5e7eb; /* Gray-300 */
+    padding: 10px 0;
+}
+
+.submit-btn {
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb; /* Blue-600 */
+}
+
+.join-discord-btn {
+    background-color: #5865F2; /* Discord color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.join-discord-btn:hover {
+    background-color: #4752C4; /* Darker Discord color */
+}
+
+.dark .nav-button, .dark .view-project-btn, .dark .submit-btn, .dark .join-discord-btn {
+    background-color: #1f2937; /* Gray-800 */
+    color: white;
+}
+
+.dark .project-card {
+    background-color: #374151; /* Gray-700 */
+    color: white;
+}
+
+.dark .section-title {
+    color: #e5e7eb; /* Gray-300 */
+}
+
+.dark .comment {
+    border-bottom: 1px solid #4b5563; /* Gray-600 */
+}
+
+.dark .join-discord-btn {
+    background-color: #7289da; /* Discord color in dark mode */
 }
