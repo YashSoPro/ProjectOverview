@@ -9,8 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark');
+        // Change icon based on mode
+        if (document.body.classList.contains('dark')) {
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        } else {
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        }
     });
 
     // Scroll to section function
@@ -23,39 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // List of abusive keywords
     const abusiveKeywords = [
-        'abuse',
-        'bastard',
-        'bitch',
-        'bullshit',
-        'cunt',
-        'dick',
-        'douche',
-        'fag',
-        'fuck',
-        'idiot',
-        'jerk',
-        'klutz',
-        'moron',
-        'nigga',
-        'nigger',
-        'piss',
-        'prick',
-        'pussy',
-        'shit',
-        'slut',
-        'twat',
-        'whore',
-        'wanker',
-        'retard',
-        'cocksucker',
-        'motherfucker',
-        'asshole',
-        'faggot',
-        'freak',
-        'loser',
-        'scum',
-        'skank',
-        'troll'
+        'abuse', 'bastard', 'bitch', 'bullshit', 'cunt', 'dick', 'douche',
+        'fag', 'fuck', 'idiot', 'jerk', 'klutz', 'moron', 'nigga', 'nigger',
+        'piss', 'prick', 'pussy', 'shit', 'slut', 'twat', 'whore', 'wanker',
+        'retard', 'cocksucker', 'motherfucker', 'asshole', 'faggot', 'freak',
+        'loser', 'scum', 'skank', 'troll'
     ];
 
     // Comment form submission
@@ -69,22 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const comment = document.getElementById('commentText').value;
 
         // Check for abusive comments
-        const containsAbusiveWords = abusiveKeywords.some((word) => comment.toLowerCase().includes(word));
+        const isAbusive = abusiveKeywords.some((keyword) => comment.toLowerCase().includes(keyword));
 
-        if (containsAbusiveWords) {
-            alert('Your comment contains inappropriate language. Please revise it.');
+        if (isAbusive) {
+            alert('Your comment contains inappropriate language. Please revise your comment.');
             return;
         }
 
-        if (name && comment) {
-            const newComment = document.createElement('div');
-            newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
-            newComment.classList.add('mb-4', 'p-2', 'border', 'rounded');
+        // Add comment to the list
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.innerHTML = `<strong>${name}</strong>: ${comment}`;
+        commentList.appendChild(newComment);
 
-            commentList.appendChild(newComment);
-
-            // Reset the form
-            commentForm.reset();
-        }
+        // Clear the form
+        commentForm.reset();
     });
 });
