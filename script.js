@@ -79,4 +79,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 targets: document.documentElement,
                 scrollTop: section.offsetTop,
                 duration: 800,
-                easing: '
+                easing: 'easeInOutQuad'
+            });
+        }
+    };
+
+    // Handle comment submission
+    const commentForm = document.getElementById('commentForm');
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent form submission
+
+        const nameInput = document.getElementById('nameInput').value;
+        const commentText = document.getElementById('commentText').value;
+        const commentList = document.getElementById('commentList');
+
+        // Create a new comment
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.innerText = `${nameInput}: ${commentText}`;
+
+        commentList.appendChild(commentDiv);
+
+        // Clear input fields
+        document.getElementById('nameInput').value = '';
+        document.getElementById('commentText').value = '';
+    });
+});
