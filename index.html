@@ -7,20 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
     <div class="container mx-auto px-4 py-8">
         <nav class="flex justify-center mb-8 space-x-2">
-            <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
-            <button onclick="scrollToSection('team')" class="nav-button">Team</button>
-            <button onclick="scrollToSection('comments')" class="nav-button">Comments</button>
-            <button id="darkModeToggle" class="nav-button">
+            <button onclick="scrollToSection('projects')" class="nav-button bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">Projects</button>
+            <button onclick="scrollToSection('team')" class="nav-button bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">Team</button>
+            <button onclick="scrollToSection('comments')" class="nav-button bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">Comments</button>
+            <button id="darkModeToggle" class="nav-button bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">
                 <i id="toggleIcon" class="fas fa-moon"></i>
             </button>
         </nav>
 
-        <div id="tagline" class="text-center mb-12">
+        <div id="tagline" class="text-center mb-12 opacity-0">
             <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">
                 <i class="fas fa-quote-left mr-2"></i>
                 We make your ideas into reality.
@@ -31,26 +32,26 @@
         <section id="projects" class="mb-12">
             <h2 class="section-title">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card">
+                <div class="project-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-semibold mb-2">OpenIMG</h3>
                     <p class="mb-4">[WIP] A site where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
-                    <a id="openimgLink" class="view-project-btn" href="#">
+                    <a id="openimgLink" class="view-project-btn bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800" href="#">
                         View Project
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
-                <div class="project-card">
+                <div class="project-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-semibold mb-2">ProjectAd</h3>
                     <p class="mb-4">A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
-                    <a id="projectadLink" class="view-project-btn" href="#">
+                    <a id="projectadLink" class="view-project-btn bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800" href="#">
                         View Project
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
-                <div class="project-card">
+                <div class="project-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-semibold mb-2">EmuinaBox</h3>
                     <p class="mb-4">Run Windows x86 applications on Termux using Box64 and Wine.</p>
-                    <a id="emuinaboxLink" class="view-project-btn" href="#">
+                    <a id="emuinaboxLink" class="view-project-btn bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800" href="#">
                         View Project
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
@@ -61,19 +62,19 @@
         <section id="team" class="mb-12">
             <h2 class="section-title">Team</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="team-member">
+                <div class="team-member bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                     <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow" class="w-32 h-32 rounded-full mx-auto mb-4">
                     <p class="font-semibold">SableMeow (Founder)</p>
                 </div>
-                <div class="team-member">
+                <div class="team-member bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                     <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome" class="w-32 h-32 rounded-full mx-auto mb-4">
                     <p class="font-semibold">Econome (Creator)</p>
                 </div>
-                <div class="team-member">
+                <div class="team-member bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                     <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx" class="w-32 h-32 rounded-full mx-auto mb-4">
                     <p class="font-semibold">Zephyx (Creator)</p>
                 </div>
-                <div class="team-member">
+                <div class="team-member bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                     <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam" class="w-32 h-32 rounded-full mx-auto mb-4">
                     <p class="font-semibold">Uranüs PortakalMandalinaSuyuAdam (Creator)</p>
                 </div>
@@ -83,9 +84,9 @@
         <section id="comments" class="mb-12">
             <h2 class="section-title">Comments</h2>
             <form id="commentForm" class="mb-8">
-                <input type="text" id="nameInput" placeholder="Your Name" required class="w-full mb-4 p-2 border rounded">
-                <textarea id="commentText" placeholder="Your comment here..." required class="w-full mb-4 p-2 border rounded"></textarea>
-                <button type="submit" class="submit-btn">
+                <input type="text" id="nameInput" placeholder="Your Name" required class="w-full mb-4 p-2 border rounded bg-white dark:bg-gray-800">
+                <textarea id="commentText" placeholder="Your comment here..." required class="w-full mb-4 p-2 border rounded bg-white dark:bg-gray-800"></textarea>
+                <button type="submit" class="submit-btn bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">
                     Submit
                     <i class="fas fa-paper-plane ml-2"></i>
                 </button>
@@ -94,7 +95,7 @@
         </section>
 
         <div class="text-center">
-            <a id="joinDiscord" class="join-discord-btn">
+            <a id="joinDiscord" class="join-discord-btn bg-purple-600 hover:bg-purple-700 dark:bg-purple-800 dark:hover:bg-purple-900">
                 Join Our Discord
                 <i class="fab fa-discord ml-2"></i>
             </a>
