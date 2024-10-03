@@ -1,63 +1,45 @@
-// Dark mode toggle and icon update
-const darkModeToggle = document.getElementById('darkModeToggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+document.addEventListener('DOMContentLoaded', () => {
+    // Links to the projects
+    document.getElementById('openimgLink').setAttribute('href', 'https://github.com/YashSoPro/OpenIMG');
+    document.getElementById('projectadLink').setAttribute('href', 'https://github.com/YashSoPro/projectadd');
+    document.getElementById('emuinaboxLink').setAttribute('href', 'https://github.com/YashSoPro/emuinabox');
 
-    const icon = document.getElementById('darkModeIcon');
-    if (document.body.classList.contains('dark')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-});
+    // Discord link
+    document.getElementById('joinDiscord').setAttribute('href', 'https://discord.gg/byAggyEXNA');
 
-// Scroll to section functionality
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Load comments from localStorage
-function loadComments() {
-    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
-    savedComments.forEach(commentObj => {
-        const newComment = document.createElement('div');
-        newComment.innerHTML = `<strong>${commentObj.name}:</strong> ${commentObj.comment}`;
-        newComment.classList.add('mb-4', 'p-2', 'border', 'rounded');
-        commentList.appendChild(newComment);
+    // Toggle dark mode
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
     });
-}
 
-// Save comment to localStorage
-function saveComment(name, comment) {
-    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
-    savedComments.push({ name, comment });
-    localStorage.setItem('comments', JSON.stringify(savedComments));
-}
+    // Scroll to section function
+    window.scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-// Handle comment submission
-const commentForm = document.getElementById('commentForm');
-const commentList = document.getElementById('commentList');
+    // Comment form submission
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
 
-commentForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const name = document.getElementById('nameInput').value;
-    const comment = document.getElementById('commentText').value;
+        const name = document.getElementById('nameInput').value;
+        const comment = document.getElementById('commentText').value;
 
-    if (name && comment) {
-        const newComment = document.createElement('div');
-        newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
-        newComment.classList.add('mb-4', 'p-2', 'border', 'rounded');
+        if (name && comment) {
+            const newComment = document.createElement('div');
+            newComment.innerHTML = `<strong>${name}:</strong> ${comment}`;
+            newComment.classList.add('mb-4', 'p-2', 'border', 'rounded');
 
-        commentList.appendChild(newComment);
-        saveComment(name, comment); // Save comment to localStorage
+            commentList.appendChild(newComment);
 
-        commentForm.reset(); // Clear the form
-    }
+            // Reset the form
+            commentForm.reset();
+        }
+    });
 });
-
-// Load comments when the page is loaded
-document.addEventListener('DOMContentLoaded', loadComments);
