@@ -3,103 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-    <div class="container mx-auto px-4 py-8">
-        <nav class="flex justify-center mb-8">
-            <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
-            <button onclick="scrollToSection('team')" class="nav-button">Team</button>
-            <button onclick="scrollToSection('comments')" class="nav-button">Comments</button>
-            <button id="darkModeToggle" class="nav-button">
-                <i class="fas fa-moon dark:fas fa-sun"></i>
-            </button>
-        </nav>
+<body class="dark-mode"> <!-- Initially set to dark mode for default -->
 
-        <div id="tagline" class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">
-                <i class="fas fa-quote-left mr-2"></i>
-                We make your ideas into reality.
-                <i class="fas fa-quote-right ml-2"></i>
-            </h1>
-        </div>
+    <!-- Navbar -->
+    <nav class="flex justify-center mb-8 space-x-4"> <!-- Fixed the spacing -->
+        <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
+        <button onclick="scrollToSection('team')" class="nav-button">Team</button>
+        <button onclick="scrollToSection('comments')" class="nav-button">Comments</button>
+        <button id="darkModeToggle" class="nav-button">
+            <i id="darkModeIcon" class="fas fa-moon"></i> <!-- Dark mode icon toggle -->
+        </button>
+    </nav>
 
-        <section id="projects" class="mb-12">
-            <h2 class="section-title">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card">
-                    <h3 class="text-xl font-semibold mb-2">OpenIMG</h3>
-                    <p class="mb-4">[WIP] A site where people can share their photography, vote, and view the leaderboard of top images weekly.</p>
-                    <a id="openimgLink" class="view-project-btn">
-                        View Project
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <h3 class="text-xl font-semibold mb-2">ProjectAd</h3>
-                    <p class="mb-4">A multimedia experience platform featuring a vast library, user-friendly interface, and dynamic search options.</p>
-                    <a id="projectadLink" class="view-project-btn">
-                        View Project
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <h3 class="text-xl font-semibold mb-2">EmuinaBox</h3>
-                    <p class="mb-4">Run Windows x86 applications on Termux using Box64 and Wine.</p>
-                    <a id="emuinaboxLink" class="view-project-btn">
-                        View Project
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- Projects Section -->
+    <section id="projects" class="project-cards">
+        <!-- Project cards content here -->
+    </section>
 
-        <section id="team" class="mb-12">
-            <h2 class="section-title">Team</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/712992661530738688/fd29875e10626200f7aa7908020b5199.png?size=256" alt="SableMeow" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <p class="font-semibold">SableMeow (Founder)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/838105973985771520/bd67fc9967ac37a72465b0505146ff33.png?size=256" alt="Econome" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <p class="font-semibold">Econome (Creator)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/1211326933888143464/d196d07229d1ecc399d9e3b4d6857e4c.png?size=256" alt="Zephyx" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <p class="font-semibold">Zephyx (Creator)</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://cdn.discordapp.com/avatars/699618585559171084/a465aae6f7b6887386769ac7e755d5f1.gif?size=256" alt="Uranüs PortakalMandalinaSuyuAdam" class="w-32 h-32 rounded-full mx-auto mb-4">
-                    <p class="font-semibold">Uranüs PortakalMandalinaSuyuAdam (Creator)</p>
-                </div>
-            </div>
-        </section>
+    <!-- Team Section -->
+    <section id="team" class="team-list">
+        <!-- Team member cards here -->
+    </section>
 
-        <section id="comments" class="mb-12">
-            <h2 class="section-title">Comments</h2>
-            <form id="commentForm" class="mb-8">
-                <input type="text" id="nameInput" placeholder="Your Name" required class="w-full mb-4 p-2 border rounded">
-                <textarea id="commentText" placeholder="Your comment here..." required class="w-full mb-4 p-2 border rounded"></textarea>
-                <button type="submit" class="submit-btn">
-                    Submit
-                    <i class="fas fa-paper-plane ml-2"></i>
-                </button>
-            </form>
-            <div id="commentList"></div>
-        </section>
+    <!-- Comment Section -->
+    <section id="comments" class="mt-8">
+        <h2 class="text-xl mb-4">Leave a Comment</h2>
+        <form id="commentForm">
+            <input id="nameInput" type="text" placeholder="Your Name" class="input-field mb-2">
+            <textarea id="commentText" placeholder="Your Comment" class="input-field mb-2"></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div id="commentList" class="mt-4"></div> <!-- Comment list area -->
+    </section>
 
-        <div class="text-center">
-            <a id="joinDiscord" class="join-discord-btn">
-                Join Our Discord
-                <i class="fab fa-discord ml-2"></i>
-            </a>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
