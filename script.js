@@ -10,16 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
     const toggleIcon = document.getElementById('toggleIcon');
-    
+
+    // Check if dark mode is already set in localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark');
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+    }
+
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark');
+        console.log('Dark mode toggled'); // Debugging line
+
         // Change icon based on mode
         if (document.body.classList.contains('dark')) {
             toggleIcon.classList.remove('fa-moon');
             toggleIcon.classList.add('fa-sun');
+            localStorage.setItem('darkMode', 'enabled'); // Store in localStorage
         } else {
             toggleIcon.classList.remove('fa-sun');
             toggleIcon.classList.add('fa-moon');
+            localStorage.setItem('darkMode', 'disabled'); // Store in localStorage
         }
     });
 
