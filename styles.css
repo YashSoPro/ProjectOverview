@@ -1,10 +1,10 @@
 :root {
-    --bg-color: rgba(255, 255, 255, 0.8);
-    --text-color: #333;
-    --card-bg: #ffffff;
-    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --primary-color: #4285f4;
-    --primary-hover: #3367d6;
+    --bg-color: rgba(243, 244, 246, 0.8);
+    --text-color: #1f2937;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
     --section-title-color: #1e3a8a;
     --border-color: #e5e7eb;
     --discord-color: #5865F2;
@@ -16,8 +16,8 @@ body.dark {
     --text-color: #f3f4f6;
     --card-bg: rgba(55, 65, 81, 0.9);
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --primary-color: #60a5fa;
-    --primary-hover: #3b82f6;
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
     --section-title-color: #e5e7eb;
     --border-color: #4b5563;
     --discord-color: #7289da;
@@ -32,11 +32,10 @@ body {
     background-repeat: no-repeat;
     color: var(--text-color);
     transition: color 0.3s;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    cursor: none;
 }
 
 body::before {
@@ -48,7 +47,6 @@ body::before {
     height: 100%;
     background-color: var(--bg-color);
     z-index: -1;
-    transition: background-color 0.3s;
 }
 
 .container {
@@ -57,28 +55,13 @@ body::before {
     padding: 0 20px;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color);
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
 .nav-button, .view-project-btn, .submit-btn {
     background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: none;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -91,26 +74,6 @@ nav {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--section-title-color);
-    text-align: center;
-}
-
-#hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-#tagline {
-    font-size: 1.5rem;
-    font-style: italic;
 }
 
 .project-card {
@@ -138,36 +101,9 @@ nav {
 }
 
 .comment {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--card-shadow);
-}
-
-#commentList {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-}
-
-#commentForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#commentForm input,
-#commentForm textarea {
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--card-bg);
-    color: var(--text-color);
-}
-
-#commentForm button {
-    align-self: flex-start;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    transition: background-color 0.3s;
 }
 
 .join-discord-btn {
@@ -179,7 +115,6 @@ nav {
     display: inline-block;
     transition: background-color 0.3s, transform 0.3s;
     text-decoration: none;
-    cursor: none;
 }
 
 .join-discord-btn:hover {
@@ -187,6 +122,34 @@ nav {
     transform: translateY(-2px);
 }
 
+/* Form inputs */
+input, textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll to top button */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -199,7 +162,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: none;
+    cursor: pointer;
     opacity: 0;
     transition: opacity 0.3s, background-color 0.3s;
 }
@@ -212,29 +175,7 @@ nav {
     background-color: var(--primary-hover);
 }
 
-#cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s;
-}
-
-#cursor-blur {
-    width: 400px;
-    height: 400px;
-    background-color: rgba(66, 133, 244, 0.1);
-    border-radius: 50%;
-    position: fixed;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.3s;
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-button, .view-project-btn, .submit-btn, .join-discord-btn {
         padding: 8px 16px;
@@ -249,38 +190,7 @@ nav {
         padding: 15px;
     }
 
-    #hero h1 {
-        font-size: 2rem;
-    }
-
-    #tagline {
-        font-size: 1.2rem;
-    }
-
-    #cursor, #cursor-blur {
-        display: none;
-    }
-
     body {
-        cursor: auto;
+        background-size: auto 100%;
     }
-
-    .nav-button, .view-project-btn, .submit-btn, .join-discord-btn, .scroll-to-top {
-        cursor: pointer;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
 }
