@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
     const toggleIcon = document.getElementById('toggleIcon');
-    const html = document.documentElement;
+    const body = document.body;
 
     // Function to set color scheme
     const setColorScheme = (isDark) => {
         if (isDark) {
-            html.classList.add('dark');
+            body.classList.add('dark');
             toggleIcon.classList.replace('fa-moon', 'fa-sun');
             localStorage.setItem('darkMode', 'enabled');
         } else {
-            html.classList.remove('dark');
+            body.classList.remove('dark');
             toggleIcon.classList.replace('fa-sun', 'fa-moon');
             localStorage.setItem('darkMode', 'disabled');
         }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle dark mode
     darkModeToggle.addEventListener('click', () => {
-        setColorScheme(!html.classList.contains('dark'));
+        setColorScheme(!body.classList.contains('dark'));
     });
 
     // Listen for system color scheme changes
@@ -84,24 +84,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Function to save comments to localStorage
+    const saveComments = (comments) => {
+        localStorage.setItem('comments', JSON.stringify(comments));
+    };
+
+    // Function to load comments from localStorage
+    const loadComments = () => {
+        const savedComments = localStorage.getItem('comments');
+        return savedComments ? JSON.parse(savedComments) : [];
+    };
+
+    // Function to render comments
+    const renderComments = (comments) => {
+        const commentList = document.getElementById('commentList');
+        commentList.innerHTML = ''; // Clear existing comments
+        comments.forEach(comment => {
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+            commentDiv.innerText = `${comment.name}: ${comment.text}`;
+            commentList.appendChild(commentDiv);
+        });
+    };
+
+    // Load and render saved comments
+    const comments = loadComments();
+    renderComments(comments);
+
     // Handle comment submission
     const commentForm = document.getElementById('commentForm');
     commentForm.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent form submission
 
-        const nameInput = document.getElementById('nameInput').value;
-        const commentText = document.getElementById('commentText').value;
-        const commentList = document.getElementById('commentList');
+        const nameInput = document.getElementById('nameInput');
+        const commentText = document.getElementById('commentText');
 
         // Create a new comment
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('comment');
-        commentDiv.innerText = `${nameInput}: ${commentText}`;
+        const newComment = {
+            name: nameInput.value,
+            text: commentText.value
+        };
 
-        commentList.appendChild(commentDiv);
+        // Add new comment to the array
+        comments.push(newComment);
+
+        // Save updated comments to localStorage
+        saveComments(comments);
+
+        // Re-render comments
+        renderComments(comments);
 
         // Clear input fields
-        document.getElementById('nameInput').value = '';
-        document.getElementById('commentText').value = '';
+        nameInput.value = '';
+        commentText.value = '';
+    });
+
+    // Scroll to top functionality
+    const scrollToTopBtn = document.createElement('div');
+    scrollToTopBtn.classList.add('scroll-to-top');
+    scrollToTopBtn.innerHTML = '↑';
+    document.body.appendChild(scrollToTopBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
