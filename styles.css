@@ -1,10 +1,10 @@
 :root {
-    --bg-color: rgba(243, 244, 246, 0.8);
-    --text-color: #1f2937;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --primary-color: #3b82f6;
-    --primary-hover: #2563eb;
+    --bg-color: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --primary-color: #4285f4;
+    --primary-hover: #3367d6;
     --section-title-color: #1e3a8a;
     --border-color: #e5e7eb;
     --discord-color: #5865F2;
@@ -16,8 +16,8 @@ body.dark {
     --text-color: #f3f4f6;
     --card-bg: rgba(55, 65, 81, 0.9);
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --primary-color: #3b82f6;
-    --primary-hover: #60a5fa;
+    --primary-color: #60a5fa;
+    --primary-hover: #3b82f6;
     --section-title-color: #e5e7eb;
     --border-color: #4b5563;
     --discord-color: #7289da;
@@ -32,6 +32,11 @@ body {
     background-repeat: no-repeat;
     color: var(--text-color);
     transition: color 0.3s;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    cursor: none;
 }
 
 body::before {
@@ -43,6 +48,7 @@ body::before {
     height: 100%;
     background-color: var(--bg-color);
     z-index: -1;
+    transition: background-color 0.3s;
 }
 
 .container {
@@ -51,13 +57,28 @@ body::before {
     padding: 0 20px;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .nav-button, .view-project-btn, .submit-btn {
     background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: none;
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -70,6 +91,26 @@ body::before {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--section-title-color);
+    text-align: center;
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#tagline {
+    font-size: 1.5rem;
+    font-style: italic;
 }
 
 .project-card {
@@ -78,6 +119,7 @@ body::before {
     border-radius: 10px;
     box-shadow: var(--card-shadow);
     transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
 }
 
 .project-card:hover {
@@ -88,6 +130,7 @@ body::before {
 .team-member {
     text-align: center;
     transition: transform 0.3s;
+    margin-bottom: 20px;
 }
 
 .team-member:hover {
@@ -95,9 +138,36 @@ body::before {
 }
 
 .comment {
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
-    transition: background-color 0.3s;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--card-shadow);
+}
+
+#commentList {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#commentForm input,
+#commentForm textarea {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+#commentForm button {
+    align-self: flex-start;
 }
 
 .join-discord-btn {
@@ -108,6 +178,8 @@ body::before {
     text-align: center;
     display: inline-block;
     transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    cursor: none;
 }
 
 .join-discord-btn:hover {
@@ -115,30 +187,54 @@ body::before {
     transform: translateY(-2px);
 }
 
-/* Form inputs */
-input, textarea {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
 }
 
-/* Animation classes */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.scroll-to-top.visible {
+    opacity: 1;
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+.scroll-to-top:hover {
+    background-color: var(--primary-hover);
 }
 
-/* Responsive adjustments */
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s;
+}
+
+#cursor-blur {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(66, 133, 244, 0.1);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s;
+}
+
 @media (max-width: 768px) {
     .nav-button, .view-project-btn, .submit-btn, .join-discord-btn {
         padding: 8px 16px;
@@ -153,7 +249,38 @@ input, textarea {
         padding: 15px;
     }
 
-    body {
-        background-size: auto 100%;
+    #hero h1 {
+        font-size: 2rem;
     }
+
+    #tagline {
+        font-size: 1.2rem;
+    }
+
+    #cursor, #cursor-blur {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    .nav-button, .view-project-btn, .submit-btn, .join-discord-btn, .scroll-to-top {
+        cursor: pointer;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
 }
